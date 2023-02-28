@@ -21,6 +21,8 @@ export default function Home() {
     + "*Nome*: " + name + "%0a" // Dados do formulário
     + "*Telefone*: " + phone + "%0a"
     + "*E-mail*: " + email + "%0a"
+    + "*Serviço*: " + service + "%0a"
+    + "*Barbeiro*: " + barber + "%0a"
     
    window.open(url as string  , '_blank')?.focus() 
 }
