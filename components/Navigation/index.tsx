@@ -3,12 +3,16 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { GiMustache } from "react-icons/gi";
 import { AiOutlineMenu } from "react-icons/ai";
+import {navigation} from "../../utils/utils"
 const Nav = ()=>{
     const router = useRouter()
     const [showMenu ,setShowMenu] = useState(false)
     const handleMenuOpen = ()=>{
       setShowMenu(!showMenu)
-      console.log(showMenu)
+      
+    }
+    const handleClosedMenu = ()=>{
+      setShowMenu(false)
     }
     return(
         <header className="header">
@@ -16,35 +20,20 @@ const Nav = ()=>{
                <GiMustache size={35} color={"#ccc"}/>
             </div>
          <nav className="menuDesk">
-           
-            <ul>
-              <li>
-                <Link href={"/"} >
-                    <h3 className={router.pathname === "/" ? "colorPath":""}>Home</h3>
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"}>
-                    <h3>Sobre</h3>
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"}>
-                    <h3>Serviços</h3>
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"}>
-                    <h3>Galeria</h3>
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"}>
-                    <h3>Contato</h3>
-                </Link>
-              </li>
+         <ul>
+           {
+            navigation.map((menu:any,indice:number)=>(
               
-            </ul>
+                <li key={indice}>
+                <Link href={menu.path} >
+                    <h3 className={router.pathname === menu.path ? "colorPath":""}>{menu.label}</h3>
+                </Link>
+              </li>
+             
+            ))
+           }
+          </ul>
+            
             <div className="mobile" >
             <AiOutlineMenu size={35} color={"#ccc"} onClick={handleMenuOpen} />
             </div>
@@ -53,32 +42,15 @@ const Nav = ()=>{
          <nav className={showMenu ?"menuMobile":"menuMobileClosed"}>
            
             <ul>
-              <li>
-                <Link href={"/"} >
-                    <h3 className={router.pathname === "/" ? "colorPath":""}>Home</h3>
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"}>
-                    <h3>Sobre</h3>
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"}>
-                    <h3>Serviços</h3>
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"}>
-                    <h3>Galeria</h3>
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"}>
-                    <h3>Contato</h3>
-                </Link>
-              </li>
-              
+              {
+                navigation.map((menu:any, indice:number)=>(
+                  <li key={indice} onClick={handleClosedMenu}>
+                  <Link href={menu.path} >
+                      <h3 className={router.pathname === menu.path ? "colorPath":""}>{menu.label}</h3>
+                  </Link>
+                </li>
+                ))
+              }
             </ul>
            
        

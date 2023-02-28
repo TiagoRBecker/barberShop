@@ -1,21 +1,37 @@
 import Image from "next/image";
 import Link from "next/link";
-import {useState} from "react"
+import { useState } from "react";
 import Button from "components/Button";
 import Layout from "components/Layout";
 import { SlMustache } from "react-icons/sl";
-import { FaPhoneAlt, FaWhatsapp} from "react-icons/fa";
-import { ImQuotesLeft,ImQuotesRight } from "react-icons/im";
+import {
+  AiOutlinePhone,
+  AiOutlineWhatsApp,
+  AiOutlineMail,
+} from "react-icons/ai";
+import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
+import { services, colaborador } from "../../utils/utils";
 export default function Home() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
-  const [service, setService ] = useState('Barba')
-  const [barber, setBarber] = useState('Tiago')
-  const handleDadosForm  =(e:any)=>{
-        e.preventDefault()
-        console.log(name,email,phone,service,barber)
-    const url = "https://api.whatsapp.com/send?phone=5551997338612&text=" // Seu numero
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [service, setService] = useState("Barba");
+  const [barber, setBarber] = useState("Tiago");
+  const [date, setDate] = useState<Date>();
+
+  const dateAtual = () => {
+    const data = new Date();
+    const dia = String(data.getDate()).padStart(2, "0");
+    const mes = String(data.getMonth() + 1).padStart(2, "0");
+    const ano = data.getFullYear();
+    const dataAtual = ano + "-" + mes + "-" + dia;
+    return dataAtual;
+  };
+
+  const handleDadosForm = (e: any) => {
+    e.preventDefault();
+    console.log(name, email, phone, service, barber, date);
+     const url = "https://api.whatsapp.com/send?phone=5551997338612&text=" // Seu numero
     + "*Formulário de Contato*" + "%0a" // Mensagem personalizada
     + "%0a" // Quebra de linha
     + "*Nome*: " + name + "%0a" // Dados do formulário
@@ -23,11 +39,13 @@ export default function Home() {
     + "*E-mail*: " + email + "%0a"
     + "*Serviço*: " + service + "%0a"
     + "*Barbeiro*: " + barber + "%0a"
+    + "*Data Agendada*: " + date + "%0a"
     
    window.open(url as string  , '_blank')?.focus() 
-}
-  
-  const [OpenOrClosed , setOpenOrClosed] = useState(5)
+   
+  };
+
+  const [OpenOrClosed, setOpenOrClosed] = useState(5);
   return (
     <Layout>
       <section className="boxBanner">
@@ -45,17 +63,7 @@ export default function Home() {
             <Button title="Agende seu Horário" className="btnClass" />
           </div>
         </div>
-        <div className="boxBannerOpenClosed">
-          {
-            OpenOrClosed <= 16 ?
-            <img src="/open.png" alt="" width={250} height={150} />
-            :
-            <div className="">
-            </div>
-            
-          }
-       
-        </div>
+        <div className="boxBannerOpenClosed"></div>
       </section>
       <section className="boxSobre">
         <div className="boxSobreFlex">
@@ -106,39 +114,6 @@ export default function Home() {
               />
               <span>Tesoura Tradicional</span>
             </div>
-            <div className="boxServicePrice">
-              <div className="boxServicePriceTitle">
-                <p>Corte Tradiconal</p>
-              </div>
-              <div className="boxServicePriceBorder">
-                <span></span>
-              </div>
-              <div className="boxServicePricePrice">
-                <p>R$39.90</p>
-              </div>
-            </div>
-            <div className="boxServicePrice">
-              <div className="boxServicePriceTitle">
-                <p>Corte Luxo</p>
-              </div>
-              <div className="boxServicePriceBorder">
-                <span></span>
-              </div>
-              <div className="boxServicePricePrice">
-                <p>R$89.90</p>
-              </div>
-            </div>
-            <div className="boxServicePrice">
-              <div className="boxServicePriceTitle">
-                <p>Corte Crianças</p>
-              </div>
-              <div className="boxServicePriceBorder">
-                <span></span>
-              </div>
-              <div className="boxServicePricePrice">
-                <p>R$29.90</p>
-              </div>
-            </div>
           </div>
 
           <div className="boxService">
@@ -151,39 +126,6 @@ export default function Home() {
               />
               <span>Navalha Tradicional</span>
             </div>
-            <div className="boxServicePrice">
-              <div className="boxServicePriceTitle">
-                <p>Barba Pequena</p>
-              </div>
-              <div className="boxServicePriceBorder">
-                <span></span>
-              </div>
-              <div className="boxServicePricePrice">
-                <p>R$49.90</p>
-              </div>
-            </div>
-            <div className="boxServicePrice">
-              <div className="boxServicePriceTitle">
-                <p>Barba Média</p>
-              </div>
-              <div className="boxServicePriceBorder">
-                <span></span>
-              </div>
-              <div className="boxServicePricePrice">
-                <p>R$69.90</p>
-              </div>
-            </div>
-            <div className="boxServicePrice">
-              <div className="boxServicePriceTitle">
-                <p>Barba Grande</p>
-              </div>
-              <div className="boxServicePriceBorder">
-                <span></span>
-              </div>
-              <div className="boxServicePricePrice">
-                <p>R$79.90</p>
-              </div>
-            </div>
           </div>
           <div className="boxService">
             <div className="boxServiceImg">
@@ -195,77 +137,11 @@ export default function Home() {
               />
               <span>Máquina </span>
             </div>
-            <div className="boxServicePrice">
-              <div className="boxServicePriceTitle">
-                <p>Tradicional</p>
-              </div>
-              <div className="boxServicePriceBorder">
-                <span></span>
-              </div>
-              <div className="boxServicePricePrice">
-                <p>R$49.90</p>
-              </div>
-            </div>
-            <div className="boxServicePrice">
-              <div className="boxServicePriceTitle">
-                <p>Degradê</p>
-              </div>
-              <div className="boxServicePriceBorder">
-                <span></span>
-              </div>
-              <div className="boxServicePricePrice">
-                <p>R$79.90</p>
-              </div>
-            </div>
-            <div className="boxServicePrice">
-              <div className="boxServicePriceTitle">
-                <p>Arte Visual</p>
-              </div>
-              <div className="boxServicePriceBorder">
-                <span></span>
-              </div>
-              <div className="boxServicePricePrice">
-                <p>R$89.90</p>
-              </div>
-            </div>
           </div>
           <div className="boxService">
             <div className="boxServiceImg">
               <Image src={"/tinta.png"} width={50} height={50} alt="Tesoura" />
               <span>Extras</span>
-            </div>
-            <div className="boxServicePrice">
-              <div className="boxServicePriceTitle">
-                <p>Pintura</p>
-              </div>
-              <div className="boxServicePriceBorder">
-                <span></span>
-              </div>
-              <div className="boxServicePricePrice">
-                <p>R$99.90</p>
-              </div>
-            </div>
-            <div className="boxServicePrice">
-              <div className="boxServicePriceTitle">
-                <p>Mechas</p>
-              </div>
-              <div className="boxServicePriceBorder">
-                <span></span>
-              </div>
-              <div className="boxServicePricePrice">
-                <p>R$109.90</p>
-              </div>
-            </div>
-            <div className="boxServicePrice">
-              <div className="boxServicePriceTitle">
-                <p>Plátinado</p>
-              </div>
-              <div className="boxServicePriceBorder">
-                <span></span>
-              </div>
-              <div className="boxServicePricePrice">
-                <p>R$199.90</p>
-              </div>
             </div>
           </div>
         </div>
@@ -298,18 +174,18 @@ export default function Home() {
             <div className="boxContatoDescr">
               <Link href={"#"}>
                 <span>
-                  <FaPhoneAlt size={15} color={"#ccc"} />
+                  <AiOutlinePhone size={25} color={"#ccc"} />
                 </span>
-                <p>(51)xxx-xxx-xxx</p>
+                <p>(51) xxx-xxx-xxx </p>
               </Link>
             </div>
 
             <div className="boxContatoDescr">
               <Link href={"#"}>
                 <span>
-                  <FaWhatsapp size={20} color={"#ccc"} />
+                  <AiOutlineWhatsApp size={25} color={"#ccc"} />
                 </span>
-                <p>(51)xxx-xxx-xxx</p>
+                <p>(51) xxx-xxx-xxx</p>
               </Link>
             </div>
           </div>
@@ -317,44 +193,74 @@ export default function Home() {
             <h1>AGENDE SEU HORÁRIO</h1>
             <form className="boxContatoFormulario">
               <div className="boxContatoInput">
-                <input type={"text"} 
-                placeholder="Nome"
-                value={name}
-                onChange={e  => setName(e.target.value)}
+                <input
+                  type={"text"}
+                  placeholder="Nome"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div className="boxContatoInput">
-                <input type={"email"}
-                value={email}
-                onChange={ e => setEmail(e.target.value)} 
-                placeholder="E-mail" />
+                <input
+                  type={"email"}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="E-mail"
+                />
               </div>
               <div className="boxContatoInput">
-                <input type={"text"}
-                value={phone}
-                 onChange={e=> setPhone(e.target.value)}
-                 placeholder="Telefone" />
+                <input
+                  type={"text"}
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Telefone"
+                />
+              </div>
+              <div className="boxContatoDate">
+                <div className="boxContatoAgenda">
+                  <h1>Escolha a Data</h1>
+                  <input
+                    type="date"
+                    min={dateAtual()}
+                    className="date"
+                    value={date as any}
+                    onChange={(e) => setDate(e.target.value as any)}
+                  />
+                </div>
               </div>
               <div className="boxContatoServices">
                 <div className="boxContatoCortes">
-                  <select>
-                    <option value="">Selecione o serviço</option>
-                    <option value="">Corte de Cabelo</option>
-                    <option value="">Barba</option>
-                    <option value="">Coloração / Mechas</option>
+                  <select
+                    value={service}
+                    onChange={(e) => setService(e.target.value)}
+                  >
+                    <option value="Selecione o Serviço">
+                      Selecione o Serviço
+                    </option>
+                    {services.map((service: any, indice: number) => (
+                      <option key={indice} value={service.path}>
+                        {service.path}
+                      </option>
+                    ))}
                   </select>
-                  <div className="boxContatoColaborador">
-                    <select>
-                      <option value="">Selecione o colaborador</option>
-                      <option value="">Tiago Becker</option>
-                      <option value="">Guilherme oliveira</option>
-                      <option value="">Denis Padilha</option>
-                    </select>
-                  </div>
+                </div>
+
+                <div className="boxContatoColaborador">
+                  <select
+                    value={barber}
+                    onChange={(e) => setBarber(e.target.value)}
+                  >
+                    <option value="Selecione o Colaborador">Selecione o colaborador</option>
+                    {colaborador.map((barber: any, indice: number) => (
+                      <option key={indice} value={barber.name}>
+                        {barber.name}
+                      </option>
+                    ))}
+                  </select>
                 </div>
               </div>
-              <div className="boxContatoBtn" onClick={handleDadosForm }>
-                <Button title="ENVIAR" className="btnClass"/>
+              <div className="boxContatoBtn" onClick={handleDadosForm}>
+                <Button title="ENVIAR" className="btnClass" />
               </div>
             </form>
           </div>
@@ -417,23 +323,44 @@ export default function Home() {
         </div>
         <div className="boxDepoimentos">
           <div className="boxDepoimentoDescript">
-           <div className="quoteLeft">
-            <ImQuotesLeft size={50} color={"#fff"}/>
-           </div>
-          <div className="boxDepoimentoDescr">
-            <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            illo eos libero culpa. In odio commodi corporis obcaecati rem
-            explicabo rerum ullam vitae voluptas sint! Tempore accusantium
-            reiciendis aliquam vel.
-            </p>
+            <div className="quoteLeft">
+              <ImQuotesLeft size={50} color={"#fff"} />
+            </div>
+            <div className="boxDepoimentoDescr">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Officiis illo eos libero culpa. In odio commodi corporis
+                obcaecati rem explicabo rerum ullam vitae voluptas sint! Tempore
+                accusantium reiciendis aliquam vel.
+              </p>
+            </div>
+            <div className="quoteRigth">
+              <ImQuotesRight size={50} color={"#fff"} />
+            </div>
           </div>
-          <div className="quoteRigth">
-            <ImQuotesRight size={50} color={"#fff"}/>
-          </div>
-          </div>
+
           <div className="boxDepoimentoCliente">
             <h2>Juníor Menendez</h2>
+          </div>
+        </div>
+        <div className="boxSocials">
+          <h1>SIGA-NOS</h1>
+          <div className="boxSocialsFLex">
+            <div className="boxSocialsIcons">
+              <img src="/face.png" alt="" className="face" />
+            </div>
+            <div className="boxSocialsIcons">
+              <img src="/twitter.png" alt="" className="tw" />
+            </div>
+            <div className="boxSocialsIcons">
+              <img src="/insta.png" alt="" className="insta" />
+            </div>
+            <div className="boxSocialsIcons">
+              <img src="/tk.png" alt="" className="tk" />
+            </div>
+            <div className="boxSocialsIcons">
+              <img src="/yt.png" alt="" className="yt" />
+            </div>
           </div>
         </div>
       </section>
