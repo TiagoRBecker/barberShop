@@ -3,8 +3,11 @@ import Layout from "components/Layout"
  const Sobre = ()=>{
     return (
         <Layout>
-        <h1>Ola Sobre</h1>
-        </Layout>
+         <section className="pageSobre">
+           <h1>Em produção pagina  Sobre</h1>
+         </section>
+         </Layout>
+       
     )
  }
  export default Sobre

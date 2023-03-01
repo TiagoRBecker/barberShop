@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "components/Button";
 import Layout from "components/Layout";
 import { SlMustache } from "react-icons/sl";
@@ -10,8 +10,13 @@ import {
   AiOutlineMail,
 } from "react-icons/ai";
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
-import { services, colaborador } from "../../utils/utils";
+import { services, colaborador, servicesLayout } from "../../utils/utils";
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function Home() {
+  useEffect(() => {
+    AOS.init();
+  });
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -30,26 +35,43 @@ export default function Home() {
 
   const handleDadosForm = (e: any) => {
     e.preventDefault();
-    console.log(name, email, phone, service, barber, date);
-     const url = "https://api.whatsapp.com/send?phone=5551997338612&text=" // Seu numero
-    + "*Formulário de Contato*" + "%0a" // Mensagem personalizada
-    + "%0a" // Quebra de linha
-    + "*Nome*: " + name + "%0a" // Dados do formulário
-    + "*Telefone*: " + phone + "%0a"
-    + "*E-mail*: " + email + "%0a"
-    + "*Serviço*: " + service + "%0a"
-    + "*Barbeiro*: " + barber + "%0a"
-    + "*Data Agendada*: " + date + "%0a"
-    
-   window.open(url as string  , '_blank')?.focus() 
-   
+    const data = new Date(date as any);
+    const dia = String(data.getDate()).padStart(2, "0");
+    const mes = String(data.getMonth() + 1).padStart(2, "0");
+    const ano = data.getFullYear();
+    const dataAtual = dia + "-" + mes + "-" + ano;
+
+    const url =
+      "https://api.whatsapp.com/send?phone=5551997338612&text=" + // Seu numero
+      "*Formulário de Contato*" +
+      "%0a" + // Mensagem personalizada
+      "%0a" + // Quebra de linha
+      "*Nome*: " +
+      name +
+      "%0a" + // Dados do formulário
+      "*Telefone*: " +
+      phone +
+      "%0a" +
+      "*E-mail*: " +
+      email +
+      "%0a" +
+      "*Serviço*: " +
+      service +
+      "%0a" +
+      "*Barbeiro*: " +
+      barber +
+      "%0a" +
+      "*Data Agendada*: " +
+      dataAtual +
+      "%0a";
+
+    window.open(url as string, "_blank")?.focus();
   };
 
-  const [OpenOrClosed, setOpenOrClosed] = useState(5);
   return (
     <Layout>
       <section className="boxBanner">
-        <div className="boxChamada">
+        <div data-aos="fade-in" className="boxChamada">
           <div className="boxChamadaTitle">BARBEARIA SILVA</div>
           <div className="boxChamadaText">
             <p>
@@ -67,7 +89,12 @@ export default function Home() {
       </section>
       <section className="boxSobre">
         <div className="boxSobreFlex">
-          <div className="boxSobreText">
+          <div className="boxSobreText" 
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="500"
+          data-aos-offset="0"
+          >
             <div className="boxSobreTitle">
               <h2>Sobre a barbearia </h2>
             </div>
@@ -91,7 +118,12 @@ export default function Home() {
               <p>De 2019 a 2023</p>
             </div>
           </div>
-          <div className="boxSobreImg">
+          <div className="boxSobreImg" 
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="300"
+          data-aos-offset="0"
+          >
             <Image
               src={"/sobre.jpg"}
               width={800}
@@ -102,51 +134,24 @@ export default function Home() {
         </div>
       </section>
       <section className="boxServicos">
-        <h1>SERVIÇOS</h1>
+        <h1 data-aos="fade-in " data-aos-delay="300">SERVIÇOS</h1>
         <div className=" boxServicosFlex">
-          <div className="boxService">
-            <div className="boxServiceImg">
-              <Image
-                src={"/tesoura.png"}
-                width={50}
-                height={50}
-                alt="Tesoura"
-              />
-              <span>Tesoura Tradicional</span>
+          {servicesLayout.map((service: any, indice: number) => (
+            <Link href={"/servicos"}>
+            <div className="boxService" key={indice} 
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+              <div className="boxServiceImg">
+                <Image src={service.img} width={50} height={50} alt="Tesoura" />
+                <span>{service.name}</span>
+              </div>
             </div>
-          </div>
-
-          <div className="boxService">
-            <div className="boxServiceImg">
-              <Image
-                src={"/navalha.png"}
-                width={50}
-                height={50}
-                alt="Tesoura"
-              />
-              <span>Navalha Tradicional</span>
-            </div>
-          </div>
-          <div className="boxService">
-            <div className="boxServiceImg">
-              <Image
-                src={"/maquina.png"}
-                width={50}
-                height={50}
-                alt="Tesoura"
-              />
-              <span>Máquina </span>
-            </div>
-          </div>
-          <div className="boxService">
-            <div className="boxServiceImg">
-              <Image src={"/tinta.png"} width={50} height={50} alt="Tesoura" />
-              <span>Extras</span>
-            </div>
-          </div>
+            </Link>
+          ))}
         </div>
 
-        <div className="boxServiceMustache">
+        <div className="boxServiceMustache" data-aos="fade-up" data-aos-delay="300">
           <span className="boxServiceBorder"></span>
           <SlMustache size={80} color={"#fff"} />
           <span className="boxServiceBorder"></span>
@@ -154,7 +159,11 @@ export default function Home() {
       </section>
       <section className="boxContato">
         <div className="boxContatoFlex">
-          <div className="boxContatoText">
+          <div className="boxContatoText" 
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          >
             <div className="boxContatoMustache">
               <SlMustache size={80} fill={"#fff"} />
             </div>
@@ -189,7 +198,11 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="boxContatoForm">
+          <div className="boxContatoForm"
+          data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+          >
             <h1>AGENDE SEU HORÁRIO</h1>
             <form className="boxContatoFormulario">
               <div className="boxContatoInput">
@@ -218,7 +231,7 @@ export default function Home() {
               </div>
               <div className="boxContatoDate">
                 <div className="boxContatoAgenda">
-                  <h1>Escolha a Data</h1>
+                  <h2>Escolha a Data</h2>
                   <input
                     type="date"
                     min={dateAtual()}
@@ -250,7 +263,9 @@ export default function Home() {
                     value={barber}
                     onChange={(e) => setBarber(e.target.value)}
                   >
-                    <option value="Selecione o Colaborador">Selecione o colaborador</option>
+                    <option value="Selecione o Colaborador">
+                      Selecione o colaborador
+                    </option>
                     {colaborador.map((barber: any, indice: number) => (
                       <option key={indice} value={barber.name}>
                         {barber.name}
@@ -269,24 +284,38 @@ export default function Home() {
       <section className="boxGaleria">
         <h1>GALERIA </h1>
         <div className="boxGaleriaFlex">
-          <div className="boxGaleriaImg">
+          <div className="boxGaleriaImg"
+          
+          >
             <Image
+            data-aos="fade-right"
+            data-aos-offset="250"
+            data-aos-easing="ease-in-sine"
               src={"/corte1.jpg"}
               width={300}
               height={300}
               alt="Serviços"
             />
           </div>
-          <div className="boxGaleriaImg">
+          <div className="boxGaleriaImg"
+         
+          >
             <Image
+            data-aos="fade-right"
+            data-aos-offset="350"
+            data-aos-easing="ease-in-sine"
               src={"/corte2.jpg"}
               width={300}
               height={300}
               alt="Serviços"
             />
           </div>
-          <div className="boxGaleriaImg">
+          <div className="boxGaleriaImg"
+          >
             <Image
+            data-aos="fade-right"
+            data-aos-offset="450"
+            data-aos-easing="ease-in-sine"
               src={"/corte3.jpg"}
               width={300}
               height={300}
@@ -295,6 +324,9 @@ export default function Home() {
           </div>
           <div className="boxGaleriaImg">
             <Image
+            data-aos="fade-left"
+            data-aos-offset="250"
+            data-aos-easing="ease-in-sine"
               src={"/corte4.jpg"}
               width={300}
               height={300}
@@ -303,6 +335,9 @@ export default function Home() {
           </div>
           <div className="boxGaleriaImg">
             <Image
+            data-aos="fade-left"
+            data-aos-offset="350"
+            data-aos-easing="ease-in-sine"
               src={"/corte5.jpg"}
               width={300}
               height={300}
@@ -311,6 +346,9 @@ export default function Home() {
           </div>
           <div className="boxGaleriaImg">
             <Image
+            data-aos="fade-left"
+            data-aos-offset="450"
+            data-aos-easing="ease-in-sine"
               src={"/corte6.jpg"}
               width={300}
               height={300}
@@ -318,7 +356,9 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="boxGaleriaBtn">
+        <div className="boxGaleriaBtn" 
+         data-aos="fade-up"
+        >
           <Button title="GALERIA" className="btnClass" />
         </div>
         <div className="boxDepoimentos">
@@ -343,7 +383,7 @@ export default function Home() {
             <h2>Juníor Menendez</h2>
           </div>
         </div>
-        <div className="boxSocials">
+        <div className="boxSocials"  data-aos="fade-in " data-aos-delay="300">
           <h1>SIGA-NOS</h1>
           <div className="boxSocialsFLex">
             <div className="boxSocialsIcons">

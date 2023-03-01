@@ -3,7 +3,9 @@ import Layout from "components/Layout"
 const Galeria = ()=>{
     return (
         <Layout>
-        <h1>Ola Galeria</h1>
+        <section className="pageGaleria">
+          <h1>Em produção pagina  Galeria</h1>
+        </section>
         </Layout>
         
     )

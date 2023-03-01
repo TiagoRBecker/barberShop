@@ -20,3 +20,9 @@ export const colaborador =[
     {id:2 , name:"Gustavo Pereira"},
     {id:3 , name:"Matheus Duarte"}
 ]
+export const servicesLayout =[
+   {name:"Tesoura Tradicional" ,img:"/tesoura.png"},
+   {name:"Navalha" ,img:"/navalha.png"},
+   {name:"Máquina" ,img:"/maquina.png"},
+   {name:"Extras" ,img:"/tinta.png"}
+]

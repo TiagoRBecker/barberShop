@@ -8,9 +8,9 @@ import {
 const Footer = () => {
   return (
     <footer>
-      <section className="boxUtils">
-        <div className="boxUtilsFlex">
-          <div className="boxLocation">
+      <section className="boxUtils" >
+        <div className="boxUtilsFlex" data-aos="fade-in ">
+          <div className="boxLocation ">
             <h1>Localização</h1>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13818.471798810153!2d-51.21701958346447!3d-30.01912472943655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951979bb9de83c59%3A0x8ea873ac15723dd0!2sFloresta%2C%20Porto%20Alegre%20-%20RS!5e0!3m2!1spt-BR!2sbr!4v1677592007953!5m2!1spt-BR!2sbr"
@@ -80,8 +80,8 @@ const Footer = () => {
         </div>
       </section>
       <div className="credits">
-        <span>Todos Direitos Reservados &copy; Barbearia Silva</span>
-        <p>Desenvolvido por Tiago Becker</p>
+        <span >Todos Direitos Reservados &copy; Barbearia Silva</span>
+        <p >Desenvolvido por Tiago Becker</p>
       </div>
     </footer>
   );
