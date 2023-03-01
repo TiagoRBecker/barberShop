@@ -71,7 +71,7 @@ export default function Home() {
   return (
     <Layout>
       <section className="boxBanner">
-        <div data-aos="fade-in" className="boxChamada">
+        <div data-aos="fade-in"  data-aos-delay="300" className="boxChamada">
           <div className="boxChamadaTitle">BARBEARIA SILVA</div>
           <div className="boxChamadaText">
             <p>
@@ -282,7 +282,7 @@ export default function Home() {
         </div>
       </section>
       <section className="boxGaleria">
-        <h1>GALERIA </h1>
+        <h1 data-aos-delay="300">GALERIA </h1>
         <div className="boxGaleriaFlex">
           <div className="boxGaleriaImg"
           
