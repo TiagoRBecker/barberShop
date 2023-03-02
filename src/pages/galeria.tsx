@@ -139,7 +139,7 @@ const Galeria = () => {
             </div>
           </div>
         </Gallery>
-        <div className="boxServiceMustache" data-aos="fade-up" data-aos-delay="300">
+        <div className="boxServiceMustache" >
           <span className="boxServiceBorder"></span>
           <SlMustache size={80} color={"#fff"} />
           <span className="boxServiceBorder"></span>
@@ -147,9 +147,7 @@ const Galeria = () => {
         <div className="boxContatoGaleria">
         <div className="boxContatoFlex">
           <div className="boxContatoText" 
-          data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
+         
           >
             <div className="boxContatoMustache">
               <SlMustache size={80} fill={"#fff"} />
@@ -186,9 +184,7 @@ const Galeria = () => {
             </div>
           </div>
           <div className="boxContatoForm"
-          data-aos="fade-left"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
+          
           >
             <h1>AGENDE SEU HORÁRIO</h1>
             <Contato/>

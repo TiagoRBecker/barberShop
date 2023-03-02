@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <Layout>
       <section className="boxBanner">
-        <div data-aos="fade-in"  data-aos-delay="300" className="boxChamada">
+        <div  className="boxChamada">
           <div className="boxChamadaTitle">BARBEARIA SILVA</div>
           <div className="boxChamadaText">
             <p>
@@ -39,15 +39,12 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <div className="boxBannerOpenClosed"></div>
+       
       </section>
       <section className="boxSobre">
         <div className="boxSobreFlex">
           <div className="boxSobreText" 
-          data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="500"
-          data-aos-offset="0"
+          
           >
             <div className="boxSobreTitle">
               <h2>Sobre a barbearia </h2>
@@ -73,10 +70,7 @@ export default function Home() {
             </div>
           </div>
           <div className="boxSobreImg" 
-          data-aos="fade-zoom-in"
-          data-aos-easing="ease-in-back"
-          data-aos-delay="300"
-          data-aos-offset="0"
+        
           >
             <Image
               src={"/sobre.jpg"}
@@ -88,14 +82,13 @@ export default function Home() {
         </div>
       </section>
       <section className="boxServicos">
-        <h1 data-aos="fade-in " data-aos-delay="300">SERVIÇOS</h1>
+        <h1 >SERVIÇOS</h1>
         <div className=" boxServicosFlex">
           {servicesLayout.map((service: any, indice: number) => (
             <Link href={"/servicos"} key={indice} >
             <div className="boxService" 
-            data-aos="fade-right"
-            data-aos-offset="300"
-            data-aos-easing="ease-in-sine">
+           
+           >
               <div className="boxServiceImg">
                 <Image src={service.img} width={50} height={50} alt="Tesoura" />
                 <span>{service.name}</span>
@@ -105,7 +98,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="boxServiceMustache" data-aos="fade-up" data-aos-delay="300">
+        <div className="boxServiceMustache" >
           <span className="boxServiceBorder"></span>
           <SlMustache size={80} color={"#fff"} />
           <span className="boxServiceBorder"></span>
@@ -114,9 +107,7 @@ export default function Home() {
       <section className="boxContato">
         <div className="boxContatoFlex">
           <div className="boxContatoText" 
-          data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
+          
           >
             <div className="boxContatoMustache">
               <SlMustache size={80} fill={"#fff"} />
@@ -153,9 +144,7 @@ export default function Home() {
             </div>
           </div>
           <div className="boxContatoForm"
-          data-aos="fade-left"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
+          
           >
             <h1>AGENDE SEU HORÁRIO</h1>
             <Contato/>
@@ -163,15 +152,13 @@ export default function Home() {
         </div>
       </section>
       <section className="boxGaleria">
-        <h1 data-aos="fade-in " data-aos-delay="300">GALERIA </h1>
+        <h1 >GALERIA </h1>
         <div className="boxGaleriaFlex">
           <div className="boxGaleriaImg"
           
           >
             <Image
-            data-aos="fade-right"
-            data-aos-offset="250"
-            data-aos-easing="ease-in-sine"
+            
               src={"/corte1.jpg"}
               width={300}
               height={300}
@@ -182,9 +169,7 @@ export default function Home() {
          
           >
             <Image
-            data-aos="fade-right"
-            data-aos-offset="350"
-            data-aos-easing="ease-in-sine"
+            
               src={"/corte2.jpg"}
               width={300}
               height={300}
@@ -194,9 +179,7 @@ export default function Home() {
           <div className="boxGaleriaImg"
           >
             <Image
-            data-aos="fade-right"
-            data-aos-offset="450"
-            data-aos-easing="ease-in-sine"
+           
               src={"/corte3.jpg"}
               width={300}
               height={300}
@@ -205,9 +188,7 @@ export default function Home() {
           </div>
           <div className="boxGaleriaImg">
             <Image
-            data-aos="fade-left"
-            data-aos-offset="250"
-            data-aos-easing="ease-in-sine"
+            
               src={"/corte4.jpg"}
               width={300}
               height={300}
@@ -216,9 +197,7 @@ export default function Home() {
           </div>
           <div className="boxGaleriaImg">
             <Image
-            data-aos="fade-left"
-            data-aos-offset="350"
-            data-aos-easing="ease-in-sine"
+            
               src={"/corte5.jpg"}
               width={300}
               height={300}
@@ -227,9 +206,7 @@ export default function Home() {
           </div>
           <div className="boxGaleriaImg">
             <Image
-            data-aos="fade-left"
-            data-aos-offset="450"
-            data-aos-easing="ease-in-sine"
+            
               src={"/corte6.jpg"}
               width={300}
               height={300}
@@ -238,7 +215,7 @@ export default function Home() {
           </div>
         </div>
         <div className="boxGaleriaBtn" 
-         data-aos="fade-up"
+        
         >
           <Button title="GALERIA" className="btnClass" />
         </div>
@@ -264,7 +241,7 @@ export default function Home() {
             <h2>Juníor Menendez</h2>
           </div>
         </div>
-        <div className="boxSocials"  data-aos="fade-in " data-aos-delay="300">
+        <div className="boxSocials" >
           <h1>SIGA-NOS</h1>
           <div className="boxSocialsFLex">
             <div className="boxSocialsIcons">
