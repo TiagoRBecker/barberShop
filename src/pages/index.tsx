@@ -139,7 +139,7 @@ export default function Home() {
                 <span>
                   <AiOutlinePhone size={25} color={"#ccc"} />
                 </span>
-                <p>(51) xxx-xxx-xxx </p>
+                <p>(51) 997-338-612 </p>
               </Link>
             </div>
 
@@ -148,7 +148,7 @@ export default function Home() {
                 <span>
                   <AiOutlineWhatsApp size={25} color={"#ccc"} />
                 </span>
-                <p>(51) xxx-xxx-xxx</p>
+                <p>(51) 997-338-612</p>
               </Link>
             </div>
           </div>

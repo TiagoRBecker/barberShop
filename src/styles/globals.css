@@ -866,11 +866,59 @@ a {
 .pageService{
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #363636;
   color: #ccc;
+  padding: 25px 0;
+}
+.pageService h1,h2{
+  padding: 20px 0;
+}
+.pageServiceFlex{
+  display: flex;
+  width: 60%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 10px;
+  padding: 15px 0;
+  margin-bottom: 25px;
+  
+}
+.pageServicesPrice{
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  
+ 
+}
+.pageServicesPrice h1{
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  color: #363636;
+}
+.pageServicePriceDecript{
+  width: 50%;
+  margin: 5px auto;
+  background-color: #363636;
+ color: #ccc;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 0 10px;
+ border: 1px solid #7C5C0A;
+ border-radius: 5px;
+}
+.pageServicePriceDecript{
+  font-size: 19px;
+  font-weight: bold;
+}
+.pageServicePriceDecript p{
+  font-size: 20px;
+  color: #7C5C0A;
 }
 /*----------------*/
 /*CSS PAGE SOBRE*/
@@ -1041,6 +1089,16 @@ a {
   .boxUtilsFlex{
     flex-direction: column;
   }
+  .pageServicePriceDecript{
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+   gap: 25px;
+  }
+  .pageServiceFlex{
+     
+     padding: 0 25px;
+  }
 }
 
 @media screen and (max-width:800px) {
@@ -1148,15 +1206,6 @@ a {
 
 
 }
-
-@media screen and (max-width:650px) {
-  .boxGaleriaImg {
-    width: 100%;
-    height: auto;
-
-  }
-
-}
 @media(max-width:768px){
   .container-galeria{
       grid-template-columns: repeat(1,1fr);
@@ -1170,4 +1219,21 @@ a {
   .w-2{
       grid-column: span 1;
   }
+}
+@media screen and (max-width:650px) {
+  .boxGaleriaImg {
+    width: 100%;
+    height: auto;
+
+  }
+  .pageServiceFlex{
+    width: 100%;
+  }
+
+}
+@media screen and (max-width:400px) {
+  .pageServicePriceDecript span, p{
+    font-size: 15px;
+  }
+  
 }

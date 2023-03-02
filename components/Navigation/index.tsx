@@ -17,7 +17,9 @@ const Nav = ()=>{
     return(
         <header className="header">
              <div className="logo">
+              <Link href={"/"}>
                <GiMustache size={35} color={"#ccc"}/>
+               </Link>
             </div>
          <nav className="menuDesk">
          <ul>

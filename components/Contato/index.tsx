@@ -8,7 +8,7 @@ const Contato = () => {
    
   const validateForm = yup.object().shape({
     date: yup.string().required("Necessario preencher a data"),
-    telefone: yup.string().required("O campo Telefone é obrigatório"),
+    telefone: yup.string().required("O campo Telefone é obrigatório").min(11),
     email: yup
       .string()
       .required("Necessário preencher o campo com um e-mail válido")
