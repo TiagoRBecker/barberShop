@@ -10,12 +10,7 @@ import 'photoswipe/dist/photoswipe.css'
 import { SlMustache } from "react-icons/sl";
 import Contato from "components/Contato"
 const Galeria = () => {
-  const smallItemStyles: React.CSSProperties = {
-    cursor: 'pointer',
-    objectFit: 'cover',
-    width: '100%',
-    maxHeight: '100%',
-  }
+ 
 
 
   return (
