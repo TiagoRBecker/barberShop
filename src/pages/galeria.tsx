@@ -9,8 +9,12 @@ import {
 import 'photoswipe/dist/photoswipe.css'
 import { SlMustache } from "react-icons/sl";
 import Contato from "components/Contato"
+import { useEffect } from "react";
+import Image from "next/image";
 const Galeria = () => {
- 
+ useEffect(()=>{
+  Gallery
+ })
 
 
   return (
@@ -31,8 +35,8 @@ const Galeria = () => {
                 height="800"
               >
                 {({ ref, open }) => (
-                  <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte1.jpg"
-                    className="img-galeria"
+                  <Image ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte1.jpg" width={800} height={800}
+                    className="img-galeria" alt="cortes"
                   />
                 )}
               </Item>
@@ -47,7 +51,7 @@ const Galeria = () => {
                 height="800"
               >
                 {({ ref, open }) => (
-                  <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte5.jpg"
+                  <Image ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte5.jpg" width={800} height={800} alt="cortes"
                     className="img-galeria"
                   />
                 )}
@@ -63,7 +67,7 @@ const Galeria = () => {
                 height="800"
               >
                 {({ ref, open }) => (
-                  <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte2.jpg"
+                  <Image ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte2.jpg" width={800} height={800} alt="cortes"
                     className="img-galeria"
                   />
                 )}
@@ -79,7 +83,7 @@ const Galeria = () => {
                 height="800"
               >
                 {({ ref, open }) => (
-                  <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte3.jpg"
+                  <Image ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte3.jpg" width={800} height={800} alt="cortes"
                     className="img-galeria"
                   />
                 )}
@@ -95,7 +99,7 @@ const Galeria = () => {
                 height="800"
               >
                 {({ ref, open }) => (
-                  <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte4.jpg"
+                  <Image ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte4.jpg" width={800} height={800} alt="cortes"
                     className="img-galeria"
                   />
                 )}
@@ -111,7 +115,7 @@ const Galeria = () => {
                 height="800"
               >
                 {({ ref, open }) => (
-                  <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte7.jpg"
+                  <Image ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte7.jpg" width={800} height={800} alt="cortes"
                     className="img-galeria"
                   />
                 )}
@@ -127,7 +131,7 @@ const Galeria = () => {
                 height="800"
               >
                 {({ ref, open }) => (
-                  <img ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte6.jpg"
+                  <Image ref={ref as React.MutableRefObject<HTMLImageElement>} onClick={open} src="/corte6.jpg" width={800} height={800} alt="cortes"
                     className="img-galeria"
                   />
                 )}
