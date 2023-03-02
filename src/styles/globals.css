@@ -972,6 +972,7 @@ a {
 .item-galeria{
   position: relative;
   border: 2px solid #7C5C0A;
+  cursor:pointer;
 }
 
 .item-galeria .img-galeria{
