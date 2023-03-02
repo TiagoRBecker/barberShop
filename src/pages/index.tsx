@@ -1,72 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import {  useEffect } from "react";
 import Button from "components/Button";
 import Layout from "components/Layout";
 import { SlMustache } from "react-icons/sl";
 import {
   AiOutlinePhone,
   AiOutlineWhatsApp,
-  AiOutlineMail,
+ 
 } from "react-icons/ai";
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
-import { services, colaborador, servicesLayout } from "../../utils/utils";
+import {  servicesLayout } from "../../utils/utils";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Contato from "../../components/Contato/index";
 export default function Home() {
   useEffect(() => {
     AOS.init();
   });
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [service, setService] = useState("Barba");
-  const [barber, setBarber] = useState("Tiago");
-  const [date, setDate] = useState<Date>();
-
-  const dateAtual = () => {
-    const data = new Date();
-    const dia = String(data.getDate()).padStart(2, "0");
-    const mes = String(data.getMonth() + 1).padStart(2, "0");
-    const ano = data.getFullYear();
-    const dataAtual = ano + "-" + mes + "-" + dia;
-    return dataAtual;
-  };
-
-  const handleDadosForm = (e: any) => {
-    e.preventDefault();
-    const data = new Date(date as any);
-    const dia = String(data.getDate()).padStart(2, "0");
-    const mes = String(data.getMonth() + 1).padStart(2, "0");
-    const ano = data.getFullYear();
-    const dataAtual = dia + "-" + mes + "-" + ano;
-
-    const url =
-      "https://api.whatsapp.com/send?phone=5551997338612&text=" + // Seu numero
-      "*Formulário de Contato*" +
-      "%0a" + // Mensagem personalizada
-      "%0a" + // Quebra de linha
-      "*Nome*: " +
-      name +
-      "%0a" + // Dados do formulário
-      "*Telefone*: " +
-      phone +
-      "%0a" +
-      "*E-mail*: " +
-      email +
-      "%0a" +
-      "*Serviço*: " +
-      service +
-      "%0a" +
-      "*Barbeiro*: " +
-      barber +
-      "%0a" +
-      "*Data Agendada*: " +
-      dataAtual +
-      "%0a";
-
-    window.open(url as string, "_blank")?.focus();
-  };
+ 
 
   return (
     <Layout>
@@ -82,7 +34,9 @@ export default function Home() {
             </p>
           </div>
           <div className="boxButton">
+            <Link href={"/contato"}>
             <Button title="Agende seu Horário" className="btnClass" />
+            </Link>
           </div>
         </div>
         <div className="boxBannerOpenClosed"></div>
@@ -137,8 +91,8 @@ export default function Home() {
         <h1 data-aos="fade-in " data-aos-delay="300">SERVIÇOS</h1>
         <div className=" boxServicosFlex">
           {servicesLayout.map((service: any, indice: number) => (
-            <Link href={"/servicos"}>
-            <div className="boxService" key={indice} 
+            <Link href={"/servicos"} key={indice} >
+            <div className="boxService" 
             data-aos="fade-right"
             data-aos-offset="300"
             data-aos-easing="ease-in-sine">
@@ -204,85 +158,12 @@ export default function Home() {
           data-aos-easing="ease-in-sine"
           >
             <h1>AGENDE SEU HORÁRIO</h1>
-            <form className="boxContatoFormulario">
-              <div className="boxContatoInput">
-                <input
-                  type={"text"}
-                  placeholder="Nome"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-              <div className="boxContatoInput">
-                <input
-                  type={"email"}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="E-mail"
-                />
-              </div>
-              <div className="boxContatoInput">
-                <input
-                  type={"text"}
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder="Telefone"
-                />
-              </div>
-              <div className="boxContatoDate">
-                <div className="boxContatoAgenda">
-                  <h2>Escolha a Data</h2>
-                  <input
-                    type="date"
-                    min={dateAtual()}
-                    className="date"
-                    value={date as any}
-                    onChange={(e) => setDate(e.target.value as any)}
-                  />
-                </div>
-              </div>
-              <div className="boxContatoServices">
-                <div className="boxContatoCortes">
-                  <select
-                    value={service}
-                    onChange={(e) => setService(e.target.value)}
-                  >
-                    <option value="Selecione o Serviço">
-                      Selecione o Serviço
-                    </option>
-                    {services.map((service: any, indice: number) => (
-                      <option key={indice} value={service.path}>
-                        {service.path}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="boxContatoColaborador">
-                  <select
-                    value={barber}
-                    onChange={(e) => setBarber(e.target.value)}
-                  >
-                    <option value="Selecione o Colaborador">
-                      Selecione o colaborador
-                    </option>
-                    {colaborador.map((barber: any, indice: number) => (
-                      <option key={indice} value={barber.name}>
-                        {barber.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-              <div className="boxContatoBtn" onClick={handleDadosForm}>
-                <Button title="ENVIAR" className="btnClass" />
-              </div>
-            </form>
+            <Contato/>
           </div>
         </div>
       </section>
       <section className="boxGaleria">
-        <h1 data-aos-delay="300">GALERIA </h1>
+        <h1 data-aos="fade-in " data-aos-delay="300">GALERIA </h1>
         <div className="boxGaleriaFlex">
           <div className="boxGaleriaImg"
           

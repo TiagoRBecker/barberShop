@@ -15,6 +15,20 @@ export const services =[
     {id:4, path:"Barba Massagem "},
     
 ]
+export const hours = [
+    {hour:"8h"}, 
+    {hour:"9h"},
+    {hour:"10h"},
+    {hour:"11h"},
+    {hour:"11:30h"},
+    {hour:"13h"},
+    {hour:"14h"},
+    {hour:"15h"},
+    {hour:"16h"},
+    {hour:"17h"},
+    {hour:"18h"},
+    {hour:"19:30h"}
+]
 export const colaborador =[
     {id:1 , name:"Tiago Becker"},
     {id:2 , name:"Gustavo Pereira"},
@@ -25,4 +39,12 @@ export const servicesLayout =[
    {name:"Navalha" ,img:"/navalha.png"},
    {name:"Máquina" ,img:"/maquina.png"},
    {name:"Extras" ,img:"/tinta.png"}
+]
+export  const gallery =[
+    {url:"/corte1.jpg", alt:"Cortes"},
+    {url:"/corte2.jpg", alt:"Cortes"},
+    {url:"/corte3.jpg", alt:"Cortes"},
+    {url:"/corte4.jpg", alt:"Cortes"},
+    {url:"/corte5.jpg", alt:"Cortes"},
+    {url:"/corte6.jpg", alt:"Cortes"}
 ]
