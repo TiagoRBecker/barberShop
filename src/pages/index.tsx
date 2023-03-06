@@ -27,14 +27,14 @@ export default function Home() {
 <meta name="author" content="Tiago Becker"/>
 <meta name="robots" content="index, follow"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="/banner.webp"/>
+<meta property="og:url" content="https://res.cloudinary.com/tiagobecker/image/upload/v1678113778/banner_pranpe.webp"/>
 <meta property="og:title" content="Bem-Vindo a Barbearia Silva"/>
 <meta property="og:description" content="Na nossa barber shop, oferecemos serviços profissionais de corte de cabelo masculino, barba e bigode, em um ambiente descontraído e acolhedor. Agende sua visita agora."/>
 <meta property="og:image" content=""/>
 
 
 <meta property="twitter:card" content="summary_large_image"/>
-<meta property="twitter:url" content="/banner.webp"/>
+<meta property="twitter:url" content="https://res.cloudinary.com/tiagobecker/image/upload/v1678113778/banner_pranpe.webp"/>
 <meta property="twitter:title" content="Bem-Vindo a Barbearia Silva"/>
 <meta property="twitter:description" content="Na nossa barber shop, oferecemos serviços profissionais de corte de cabelo masculino, barba e bigode, em um ambiente descontraído e acolhedor. Agende sua visita agora."/>
 <meta property="twitter:image" content=""/>

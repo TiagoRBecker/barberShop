@@ -392,14 +392,19 @@ span{
 .boxContato {
   width: 100%;
   height: 100%;
-  position: relative;
   padding: 100px 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/bannerForm.jpg');
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
 }
 
 .boxContatoFlex {
   display: flex;
   align-items: center;
   justify-content: center;
+  
   height: 100%;
   gap: 25px;
  
