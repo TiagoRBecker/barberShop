@@ -30,10 +30,10 @@ const Nav = ()=>{
            {
             navigation.map((menu:any,indice:number)=>(
               
-                <li key={indice}>
-                <Link href={menu.path}  className={router.pathname === menu.path ? "colorPath":""}>
-                    {menu.label}
-                    </Link>
+                <li key={indice} >
+                <Link href={menu.path}>
+                   <h3 className={router.pathname === menu.path ? "colorPath":""}>{menu.label}</h3>
+                </Link>
               </li>
              
             ))

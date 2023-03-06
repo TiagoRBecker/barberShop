@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +10,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   background-color: black;
-  font-family: 'Roboto', sans-serif;
-
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
@@ -31,8 +30,8 @@ h3 {
 a {
   text-decoration: none;
 }
-span{
-  font-size: 19px!important;
+span {
+  font-size: 19px !important;
 }
 .error {
   color: red;
@@ -40,7 +39,6 @@ span{
   align-items: center;
   justify-content: flex-start;
   padding: 4px 0;
-
 }
 
 /*CSS HEADER*/
@@ -49,7 +47,7 @@ span{
   width: 100%;
   height: 80px;
   display: flex;
-  background-color: rgba(28, 28, 28, 1)
+  background-color: rgba(28, 28, 28, 1);
 }
 
 .logo {
@@ -58,13 +56,12 @@ span{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7C5C0A;
+  color: #7c5c0a;
 }
 
 .menuDesk {
   display: flex;
   width: 80%;
-
 }
 
 .menuDesk ul {
@@ -73,13 +70,11 @@ span{
   justify-content: flex-end;
   width: 100%;
   padding: 0 2%;
-
 }
 
 .menuDesk ul li {
   padding: 0 15px;
   list-style: none;
-
 }
 
 .menuDesk ul li a {
@@ -87,13 +82,13 @@ span{
   transition: all ease-in-out 0.9s;
 }
 
-.menuDesk a h3:hover {
+.menuDesk ul li a:hover {
   transition: all ease-in-out 1s;
   color: rgba(124, 92, 10, 1);
 }
 
 .colorPath {
-  color: #7C5C0A;
+  color: #7c5c0a !important;
 }
 
 .mobile {
@@ -122,7 +117,6 @@ span{
 .menuMobile ul li {
   padding: 17px 0;
   list-style: none;
-
 }
 
 .menuMobile ul li a {
@@ -142,18 +136,13 @@ span{
   width: 100%;
   height: 89vh;
   background-color: rgba(0, 0, 0, 0.8);
- position: relative;
+  position: relative;
 }
-.banner{
-
+.banner {
   width: 100%;
   height: 100%;
-  filter: brightness(75%)
-  
-  
+  filter: brightness(75%);
 }
-
-
 
 .boxChamada {
   position: absolute;
@@ -172,7 +161,6 @@ span{
   text-transform: uppercase;
   padding: 17px 0;
   text-align: left;
-
 }
 
 .boxChamadaText {
@@ -180,7 +168,6 @@ span{
   width: 100%;
   font-size: 20px;
   color: #ccc;
-
 }
 
 .boxButton {
@@ -192,7 +179,7 @@ span{
   width: 200px;
   height: 40px;
   border-radius: 5px;
-  background-color: #7C5C0A;
+  background-color: #7c5c0a;
   color: #ccc;
   text-transform: uppercase;
   border: none;
@@ -206,7 +193,7 @@ span{
 .boxSobre {
   width: 100%;
   height: 100vh;
-  background-color: rgba(28, 28, 28, 1)
+  background-color: rgba(28, 28, 28, 1);
 }
 
 .boxSobreFlex {
@@ -216,7 +203,6 @@ span{
   justify-content: center;
   gap: 15px;
   padding: 0 2%;
-
 }
 
 .boxSobreText {
@@ -227,7 +213,6 @@ span{
   justify-content: center;
   flex-direction: column;
   padding: 5px 10px;
-
 }
 
 .boxSobreTitle {
@@ -280,10 +265,7 @@ span{
   width: 50%;
   height: 500px;
   position: relative;
-
 }
-
-
 
 /*--------------------*/
 /*CSS SERVIÇOS*/
@@ -294,7 +276,7 @@ span{
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: rgba(28, 28, 28, 1)
+  background-color: rgba(28, 28, 28, 1);
 }
 
 .boxServicos h1 {
@@ -314,7 +296,7 @@ span{
   margin-top: 90px;
   width: 199px;
   height: 199px;
-  border: solid 2px #7C5C0A;
+  border: solid 2px #7c5c0a;
   background-color: rgba(28, 28, 28, 1);
   transition: all ease-in-out 1s !important;
   border-radius: 50%;
@@ -354,7 +336,6 @@ span{
 
 .boxServicePriceTitle {
   width: 40%;
-
 }
 
 .boxServicePriceBorder {
@@ -363,7 +344,6 @@ span{
   background-color: #ccc;
   display: block;
   width: 35%;
-
 }
 
 .boxServicePricePrice {
@@ -393,21 +373,20 @@ span{
   width: 100%;
   height: 100%;
   padding: 100px 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/bannerForm.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/bannerForm.jpg");
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  
 }
 
 .boxContatoFlex {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   height: 100%;
   gap: 25px;
- 
 }
 
 .boxContatoText {
@@ -419,11 +398,6 @@ span{
   width: 40%;
   max-width: 500px;
   height: 100%;
-
-
-
-
-
 }
 
 .boxContatoMustache {
@@ -456,7 +430,6 @@ span{
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .boxContatoNumbers {
@@ -477,16 +450,8 @@ span{
 }
 
 .boxContatoNumber a:hover {
-
   color: gray;
 }
-
-
-
-
-
-
-
 
 .boxContatoForm {
   width: 60%;
@@ -497,9 +462,8 @@ span{
   padding: 25px 2%;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.8);
-  border: solid 1px #7C5C0A;
+  border: solid 1px #7c5c0a;
   border-radius: 2px;
-  
 }
 
 .boxContatoForm h1 {
@@ -508,20 +472,17 @@ span{
 }
 
 .boxContatoFormulario {
-
   width: 90%;
   height: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 20px 0;
-
 }
 
 .boxContatoInput {
   width: 98%;
   padding-bottom: 15px;
-
 }
 
 .boxContatoInput input {
@@ -535,13 +496,11 @@ span{
   font-size: 17px;
   border-radius: 2px;
   transition: all ease-in-out 1s;
-
-
 }
 
 .boxContatoInput input:focus {
   transition: all ease-in-out 1s;
-  border: 1px solid #7C5C0A;
+  border: 1px solid #7c5c0a;
 }
 
 .boxContatoInput input::placeholder {
@@ -567,11 +526,10 @@ span{
   height: 30px;
   font-size: 15px;
   background-color: #363636;
-  border: 1px solid #7C5C0A;
+  border: 1px solid #7c5c0a;
   outline: none;
   color: #ccc;
   padding: 0 10px;
-
 }
 
 .boxContatoColaborador select {
@@ -580,7 +538,7 @@ span{
   height: 30px;
   font-size: 15px;
   background-color: #363636;
-  border: 1px solid #7C5C0A;
+  border: 1px solid #7c5c0a;
   outline: none;
   color: #ccc;
   padding: 0 10px;
@@ -596,19 +554,17 @@ span{
   height: 30px;
   font-size: 15px;
   background-color: #363636;
-  border: 1px solid #7C5C0A;
+  border: 1px solid #7c5c0a;
   outline: none;
   color: #ccc;
   padding: 0 10px;
 }
 
 .boxContatoDate {
-
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .boxContatoAgenda {
@@ -629,7 +585,7 @@ span{
   justify-content: center;
   color: #fff;
   outline: none;
-  border: 1px solid #7C5C0A;
+  border: 1px solid #7c5c0a;
 }
 
 .boxContatoBtn {
@@ -649,7 +605,6 @@ span{
   height: 100%;
   padding: 100px 0;
   background-color: #363636;
-
 }
 
 .boxGaleria h1 {
@@ -665,18 +620,15 @@ span{
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-
 }
 
 .boxGaleriaImg {
-
   width: auto;
   height: 330px;
-
 }
 
 .boxGaleriaImg img {
-  border: 2px solid #7C5C0A;
+  border: 2px solid #7c5c0a;
   width: 100%;
   height: 100%;
 }
@@ -692,7 +644,6 @@ span{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
 }
 
 .boxDepoimentoDescript {
@@ -709,7 +660,6 @@ span{
   text-align: justify;
   color: #fff;
   padding: 0 30px;
-
 }
 
 .boxDepoimentoCliente {
@@ -726,7 +676,6 @@ span{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
 }
 
 .boxSocialsFLex {
@@ -795,10 +744,10 @@ span{
   justify-content: center;
   flex-direction: column;
   background-color: #363636;
-  border-top: 2px solid #7C5C0A;
+  border-top: 2px solid #7c5c0a;
   padding: 5px 0;
 }
-.boxFooterceMustache{
+.boxFooterceMustache {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -809,22 +758,16 @@ span{
   display: flex;
   align-items: center;
   justify-content: center;
-
-
-
-
 }
 
 .boxNavUtilsMenu ul {
   list-style: none;
   display: flex;
   gap: 15px;
-
 }
 
 .boxNavUtilsMenu ul li {
   padding: 10px 0;
-
 }
 
 .boxNavUtilsMenu ul li a {
@@ -843,13 +786,11 @@ span{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #FFF;
+  color: #fff;
   font-size: 15px;
   background-color: #363636;
-  
-  
 }
-.credits p{
+.credits p {
   padding: 2px 0;
 }
 
@@ -879,7 +820,6 @@ h2 {
   padding: 15px 0;
   margin-bottom: 25px;
   background-color: #808080;
-
 }
 
 .pageServicesPrice {
@@ -887,8 +827,6 @@ h2 {
 
   display: flex;
   flex-direction: column;
-
-
 }
 
 .pageServicesPrice h2 {
@@ -907,7 +845,7 @@ h2 {
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  border: 1px solid #7C5C0A;
+  border: 1px solid #7c5c0a;
   border-radius: 5px;
 }
 
@@ -918,7 +856,7 @@ h2 {
 
 .pageServicePriceDecript p {
   font-size: 20px;
-  color: #7C5C0A;
+  color: #7c5c0a;
 }
 
 /*----------------*/
@@ -934,33 +872,32 @@ h2 {
   color: #ccc;
   padding: 20px;
 }
-.sobreBanner{
+.sobreBanner {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.pageFlex{
+.pageFlex {
   display: flex;
   width: 100%;
   height: 100%;
   padding: 5px 0;
   justify-content: center;
   margin-bottom: 50px;
- 
 }
-.pageText{
+.pageText {
   width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.pageTextTitle{
+.pageTextTitle {
   width: 100%;
   padding: 20px 0;
   text-align: center;
 }
-.pageTextImg{
+.pageTextImg {
   padding: 0 15px;
   width: 45%;
   height: 100%;
@@ -968,28 +905,28 @@ h2 {
   align-items: center;
   justify-content: center;
 }
-.pageTextImg img{
+.pageTextImg img {
   border-radius: 5px;
   width: 100%;
-  height:500px;
+  height: 500px;
 }
-.boxImageBarber{
+.boxImageBarber {
   display: flex;
   width: 100%;
   height: 100%;
   gap: 5px;
   margin: 25px 0;
 }
-.boxImgBarber{
+.boxImgBarber {
   width: 33%;
   height: 100%;
 }
-.boxImgBarber img{
+.boxImgBarber img {
   width: 100%;
   height: 450px;
   border: solid 2px #ccc;
 }
-.boxTextNow{
+.boxTextNow {
   width: 100%;
   height: 100%;
   display: flex;
@@ -999,7 +936,6 @@ h2 {
   padding: 25px 0;
 }
 .boxTextNow p {
- 
   width: 100%;
   max-width: 500px;
   text-align: justify;
@@ -1021,12 +957,10 @@ h2 {
 .pageGaleria h1,
 p {
   padding: 10px 0;
-
 }
 
 .pageGaleria p {
   font-size: 19px;
-
 }
 
 .container-galeria {
@@ -1055,7 +989,7 @@ p {
 
 .item-galeria {
   position: relative;
-  border: 2px solid #7C5C0A;
+  border: 2px solid #7c5c0a;
   cursor: pointer;
 }
 
@@ -1063,7 +997,6 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
 }
 
 .pageContatoGalery {
@@ -1075,12 +1008,12 @@ p {
 .boxContatoGaleria {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/bannerForm.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/bannerForm.jpg");
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 25px 0;
-
 }
 
 /*---------------*/
@@ -1095,13 +1028,13 @@ p {
   color: #ccc;
 }
 
-@media screen and (min-width:890px) {
+@media screen and (min-width: 890px) {
   .menuMobile {
     display: none;
   }
 }
 
-@media screen and (max-width:890px) {
+@media screen and (max-width: 890px) {
   .boxContatoFlex {
     flex-direction: column;
   }
@@ -1113,8 +1046,6 @@ p {
 
   .boxContatoText {
     width: 100%;
-
-
   }
 
   .boxContatoMustache {
@@ -1138,25 +1069,24 @@ p {
   }
 
   .pageServiceFlex {
-
     padding: 0 25px;
   }
-  .pageFlex{
+  .pageFlex {
     flex-direction: column;
   }
-  .pageText{
+  .pageText {
     width: 100%;
     text-align: justify;
   }
-  .pageTextImg{
+  .pageTextImg {
     width: 100%;
   }
-  .boxImageBarber{
+  .boxImageBarber {
     display: none;
   }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
   .menuDesk ul {
     display: none;
   }
@@ -1178,7 +1108,6 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
   }
 
   .boxChamadaTitle,
@@ -1219,7 +1148,6 @@ p {
     align-items: center;
     justify-content: center;
     width: 100%;
-
   }
 
   .boxsobreImg img {
@@ -1228,7 +1156,6 @@ p {
 
   .boxServicos {
     height: 100%;
-
   }
 
   .boxServicosFlex {
@@ -1245,25 +1172,19 @@ p {
     flex-direction: column;
     width: 206px;
     height: 206px;
-
   }
 
   .boxService:hover {
     margin-top: 30px;
   }
 
-
   .boxServiceImg {
     align-items: center;
     justify-content: center;
   }
- 
-
-
-
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
   .container-galeria {
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: 50vh;
@@ -1278,26 +1199,24 @@ p {
   }
 }
 
-@media screen and (max-width:650px) {
+@media screen and (max-width: 650px) {
   .boxGaleriaImg {
     width: 100%;
     height: auto;
-
   }
 
   .pageServiceFlex {
     width: 100%;
   }
-
 }
 
-@media screen and (max-width:440px) {
-   .boxContatoFlex{
+@media screen and (max-width: 440px) {
+  .boxContatoFlex {
     padding: 0;
-   }
-   .boxContatoText{
+  }
+  .boxContatoText {
     padding: 5px;
-   }
+  }
   .pageServicePriceDecript span,
   p {
     font-size: 15px;
