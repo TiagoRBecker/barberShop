@@ -6,7 +6,7 @@ import Layout from "components/Layout";
 import { SlMustache } from "react-icons/sl";
 import { AiOutlinePhone, AiOutlineWhatsApp } from "react-icons/ai";
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
-import { gallery, servicesLayout } from "../../utils/utils";
+import { gallery, servicesLayout ,iconsSocials} from "../../utils/utils";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Contato from "../../components/Contato/index";
@@ -41,18 +41,8 @@ export default function Home() {
       </Head>
       <Layout>
         <section className="boxBanner">
-          <Image
-            src="/banner.webp"
-            alt="banner"
-            width={1080}
-            height={600}
-            priority
-            sizes="(min-width: 66em) 33vw,
-                   (min-width: 44em) 50vw,
-                    100vw"
-            className="banner"
-          />
-          <div className="boxChamada">
+          
+          <div className="boxChamada" data-aos="fade-up" data-aos-delay="200">
             <div className="boxChamadaTitle">BARBEARIA SILVA</div>
             <div className="boxChamadaText">
               <p>
@@ -70,7 +60,7 @@ export default function Home() {
           </div>
         </section>
         <section className="boxSobre">
-          <div className="boxSobreFlex">
+          <div className="boxSobreFlex" data-aos="fade-up" data-aos-delay="200">
             <div className="boxSobreText">
               <div className="boxSobreTitle">
                 <h2>Sobre a barbearia </h2>
@@ -102,9 +92,7 @@ export default function Home() {
                 width={500}
                 height={500}
                 alt="Sobre-Barbearia"
-                sizes="(min-width: 66em) 33vw,
-                       (min-width: 44em) 50vw,
-                        100vw"
+                
                 className="sobreBanner"
               />
             </div>
@@ -112,7 +100,7 @@ export default function Home() {
         </section>
         <section className="boxServicos">
           <h1>SERVIÇOS</h1>
-          <div className=" boxServicosFlex">
+          <div className=" boxServicosFlex" data-aos="fade-up" data-aos-delay="200">
             {servicesLayout.map((service: any, indice: number) => (
               <Link href={"/servicos"} key={indice}>
                 <div className="boxService">
@@ -130,14 +118,14 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="boxServiceMustache">
+          <div className="boxServiceMustache" data-aos="fade-up" data-aos-delay="200">
             <span className="boxServiceBorder"></span>
             <SlMustache size={80} color={"#fff"} />
             <span className="boxServiceBorder"></span>
           </div>
         </section>
         <section className="boxContato">
-          <div className="boxContatoFlex">
+          <div className="boxContatoFlex" data-aos="fade-up" data-aos-delay="200">
             <div className="boxContatoText">
               <div className="boxContatoMustache">
                 <SlMustache size={80} fill={"#fff"} />
@@ -191,7 +179,7 @@ export default function Home() {
         </section>
         <section className="boxGaleria">
           <h1>GALERIA </h1>
-          <div className="boxGaleriaFlex">
+          <div className="boxGaleriaFlex" data-aos="fade-up" data-aos-delay="200">
             {gallery.map((itens: any, indice?: number) => (
               <Link href={"/galeria"} key={indice}>
                 <div className="boxGaleriaImg">
@@ -205,12 +193,12 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <div className="boxGaleriaBtn">
+          <div className="boxGaleriaBtn" data-aos="fade-up" data-aos-delay="200">
             <Link href={"/galeria"}>
               <Button title="GALERIA" className="btnClass" />
             </Link>
           </div>
-          <div className="boxDepoimentos">
+          <div className="boxDepoimentos" data-aos="fade-up" data-aos-delay="200">
             <div className="boxDepoimentoDescript">
               <div className="quoteLeft">
                 <ImQuotesLeft size={50} color={"#fff"} />
@@ -232,24 +220,20 @@ export default function Home() {
               <h2>Juníor Menendez</h2>
             </div>
           </div>
-          <div className="boxSocials">
+          <div className="boxSocials" data-aos="fade-up" data-aos-delay="200">
             <h1>SIGA-NOS</h1>
             <div className="boxSocialsFLex">
-              <div className="boxSocialsIcons">
-                <img src="/face.png" alt="" className="face" />
+              {
+               iconsSocials.map((icons:any, indice:number)=>(
+                <div className="boxSocialsIcons" key={indice}>
+                <Link href={icons.path} target="_blank" >
+                 <Image src={icons.url} width={48} height={48} alt={icons.alt} className={icons.custom}/>
+                </Link>
               </div>
-              <div className="boxSocialsIcons">
-                <img src="/twitter.png" alt="" className="tw" />
-              </div>
-              <div className="boxSocialsIcons">
-                <img src="/insta.png" alt="" className="insta" />
-              </div>
-              <div className="boxSocialsIcons">
-                <img src="/tk.png" alt="" className="tk" />
-              </div>
-              <div className="boxSocialsIcons">
-                <img src="/yt.png" alt="" className="yt" />
-              </div>
+               ))
+              }
+             
+             
             </div>
           </div>
         </section>

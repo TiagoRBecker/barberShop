@@ -58,4 +58,10 @@ export  const galleryGrid =[
     {url:"/corte6.jpg", alt:"Cortes",gridLayout:"item-galeria w-1 h-1",imgClass:"img-galeria"}
 ]
 
-
+export const iconsSocials = [
+    {alt:"face", url:"/face.png" , path:"https://www.facebook.com" ,custom:"face"},
+    {alt:"twitter",url:"/twitter.png",path:"https://twitter.com",custom:"tw"},
+    {alt:"insta",url:"/insta.png",path:"https://www.instagram.com",custom:"insta"},
+    {alt:"tiktok",url:"/tk.png",path:"https://www.tiktok.com",custom:"tk"},
+    {alt:"yt", url:"/yt.png",path:"https://twitter.com",custom:"yt"}
+]
