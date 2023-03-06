@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -10,27 +10,31 @@ body {
   height: 100%;
   overflow-x: hidden;
   background-color: black;
- 
+  font-family: 'Roboto', sans-serif;
+
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 28px;
   color: #fff;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 18px;
   color: #ccc;
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 a {
   text-decoration: none;
 }
-.error{
+span{
+  font-size: 19px!important;
+}
+.error {
   color: red;
   display: flex;
   align-items: center;
@@ -38,6 +42,7 @@ a {
   padding: 4px 0;
 
 }
+
 /*CSS HEADER*/
 
 .header {
@@ -136,17 +141,19 @@ a {
   position: relative;
   width: 100%;
   height: 89vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/banner.jpg');
-  background-size: cover;
-  background-position: center;
+  background-color: rgba(0, 0, 0, 0.8);
+ position: relative;
+}
+.banner{
+
+  width: 100%;
+  height: 100%;
+  filter: brightness(75%)
+  
+  
 }
 
-.boxBannerOpenClosed {
-  position: absolute;
-  right: 180px;
-  top: 120px;
 
-}
 
 .boxChamada {
   position: absolute;
@@ -272,13 +279,11 @@ a {
   justify-content: center;
   width: 50%;
   height: 500px;
+  position: relative;
 
 }
 
-.boxSobreImg img {
-  width: 80%;
-  height: 500px;
-}
+
 
 /*--------------------*/
 /*CSS SERVIÇOS*/
@@ -317,7 +322,7 @@ a {
 
 .boxService:hover {
   margin-top: -30px;
-  transition: ease-in-out 1s!important;
+  transition: ease-in-out 1s !important;
   background-color: #363636;
 }
 
@@ -387,10 +392,7 @@ a {
 .boxContato {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/bannerForm.jpg');
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: relative;
   padding: 100px 0;
 }
 
@@ -400,6 +402,7 @@ a {
   justify-content: center;
   height: 100%;
   gap: 25px;
+ 
 }
 
 .boxContatoText {
@@ -414,49 +417,71 @@ a {
 
 
 
+
+
 }
 
 .boxContatoMustache {
   width: 100%;
   display: flex;
   align-items: center;
-  padding-left: 80px;
+  justify-content: center;
 }
 
-.boxContatoDescr {
+.boxContatoAdress {
+  width: 100%;
+  padding: 5px;
+}
+
+.boxAdress {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  color: #ccc;
-  gap: 15px;
-  padding: 5px 0;
-}
-
-.boxContatoDescr a {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  color: #ccc;
-  gap: 15px;
-  padding: 5px 0;
-  transition: all ease-in-out 1s;
-}
-
-.boxContatoDescr a:hover {
+  justify-content: center;
+  gap: 8px;
   color: #fff;
 }
 
-.boxContatoDescr span {
-  font-weight: bold;
-  font-size: 20px;
+.boxAdressTitle h2 {
+  padding: 0;
+  text-align: center;
 }
 
-.boxContatoDescr p {
+.boxIframeAdress {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  font-size: 18px;
 }
+
+.boxContatoNumbers {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.boxContatoNumber a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #fff;
+  transition: all ease-in-out 0.9s;
+}
+
+.boxContatoNumber a:hover {
+
+  color: gray;
+}
+
+
+
+
+
+
+
 
 .boxContatoForm {
   width: 60%;
@@ -469,6 +494,7 @@ a {
   background-color: rgba(0, 0, 0, 0.8);
   border: solid 1px #7C5C0A;
   border-radius: 2px;
+  
 }
 
 .boxContatoForm h1 {
@@ -484,7 +510,7 @@ a {
   align-items: center;
   flex-direction: column;
   padding: 20px 0;
-  
+
 }
 
 .boxContatoInput {
@@ -507,7 +533,8 @@ a {
 
 
 }
-.boxContatoInput input:focus{
+
+.boxContatoInput input:focus {
   transition: all ease-in-out 1s;
   border: 1px solid #7C5C0A;
 }
@@ -524,12 +551,13 @@ a {
   flex-direction: column;
   padding: 15px 0;
 }
-.boxContatoServices h2{
+
+.boxContatoServices h2 {
   padding: 8px 0;
 }
 
 .boxContatoCortes select {
-   margin-bottom: 5px;
+  margin-bottom: 5px;
   width: 220px;
   height: 30px;
   font-size: 15px;
@@ -540,7 +568,8 @@ a {
   padding: 0 10px;
 
 }
-.boxContatoColaborador select{
+
+.boxContatoColaborador select {
   margin-bottom: 5px;
   width: 220px;
   height: 30px;
@@ -551,10 +580,12 @@ a {
   color: #ccc;
   padding: 0 10px;
 }
-.boxContatoHours h2{
+
+.boxContatoHours h2 {
   padding: 8px 0;
 }
-.boxContatoHours select{
+
+.boxContatoHours select {
   margin-bottom: 5px;
   width: 220px;
   height: 30px;
@@ -633,7 +664,7 @@ a {
 }
 
 .boxGaleriaImg {
- 
+
   width: auto;
   height: 330px;
 
@@ -656,7 +687,7 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
+
 }
 
 .boxDepoimentoDescript {
@@ -752,89 +783,37 @@ a {
 
 /*---------------------*/
 /*CSS UTILS*/
+
 .boxUtils {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-color: #363636;
-  height: 100%;
-  display: flex;
-  justify-content: center;
   border-top: 2px solid #7C5C0A;
-  border-bottom: 2px solid #7C5C0A;
-  padding: 10px 0;
+  padding: 5px 0;
 }
-
-.boxUtilsFlex {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-}
-
-.boxLocation {
-  display: flex;
-  align-items: center;
-
-  width: 32%;
-  height: 100%;
-  flex-direction: column;
-}
-.boxLocation iframe{
-  padding: 6px 0;
-  border: none;
-  border-radius: 4px;
-}
-
-.boxContatoUtils {
-  display: flex;
-  align-items: center;
-
-  flex-direction: column;
-  width: 32%;
-  height: 100%;
-
-
-}
-
-.ct {
+.boxFooterceMustache{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 250px;
+  background-color: #363636;
 }
-
-.ct a {
-  width: 80%;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 15px;
-  padding: 6px 0;
-  color: #ccc;
-  font-size: 20px;
-}
-
-.boxNavutil {
-  width: 32%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 266px;
-}
-
 .boxNavUtilsMenu {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+
+
 
 
 }
 
 .boxNavUtilsMenu ul {
   list-style: none;
+  display: flex;
+  gap: 15px;
 
 }
 
@@ -847,6 +826,7 @@ a {
   color: #ccc;
   transition: all ease-in-out 2s;
 }
+
 .boxNavUtilsMenu a h3:hover {
   transition: all ease-in-out 1s;
   color: rgba(124, 92, 10, 1);
@@ -858,14 +838,18 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #000;
+  color: #FFF;
   font-size: 15px;
-  background-color: #ccc;
-  gap: 5px;
-  padding: 5px 0;
+  background-color: #363636;
+  
+  
 }
+.credits p{
+  padding: 2px 0;
+}
+
 /*CSS PAGE SERVICE*/
-.pageService{
+.pageService {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -875,57 +859,66 @@ a {
   color: #ccc;
   padding: 25px 0;
 }
-.pageService h1,h2{
+
+.pageService h1,
+h2 {
   padding: 20px 0;
 }
-.pageServiceFlex{
+
+.pageServiceFlex {
   display: flex;
   width: 60%;
   height: 100%;
-  
+
   border-radius: 10px;
   padding: 15px 0;
   margin-bottom: 25px;
-  background-color: #ccc;
-  
+  background-color: #808080;
+
 }
-.pageServicesPrice{
+
+.pageServicesPrice {
   width: 100%;
 
   display: flex;
   flex-direction: column;
-  
- 
+
+
 }
-.pageServicesPrice h1{
+
+.pageServicesPrice h2 {
   width: 100%;
   text-align: center;
   padding: 15px 0;
   color: #363636;
 }
-.pageServicePriceDecript{
+
+.pageServicePriceDecript {
   width: 50%;
   margin: 5px auto;
   background-color: #363636;
- color: #ccc;
- display: flex;
- align-items: center;
- justify-content: space-between;
- padding: 0 10px;
- border: 1px solid #7C5C0A;
- border-radius: 5px;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border: 1px solid #7C5C0A;
+  border-radius: 5px;
 }
-.pageServicePriceDecript{
+
+.pageServicePriceDecript {
   font-size: 19px;
   font-weight: bold;
 }
-.pageServicePriceDecript p{
+
+.pageServicePriceDecript p {
   font-size: 20px;
   color: #7C5C0A;
 }
+
 /*----------------*/
 /*CSS PAGE SOBRE*/
-.pageSobre{
+.pageSobre {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -936,49 +929,79 @@ a {
   color: #ccc;
   padding: 20px;
 }
-.pageSobreFlex{
- 
+.sobreBanner{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pageFlex{
   display: flex;
   width: 100%;
-   height: 100%;
-   padding-bottom: 20px; background-color: #000;
-   margin-bottom: 10px;
-  
-}
-.pageSobreImage{
-  display: flex;
-  align-items: center;
+  height: 100%;
+  padding: 5px 0;
   justify-content: center;
-  width: 40%;
-}
-.pageSobreImage img{
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  width: 350px;
-  height:350px;
-  background-size: contain;
-}
-.pageSobreText{
-  width: 60%;
+  margin-bottom: 50px;
  
 }
-.pageSobreText p{
-  width: 100%;
-  max-width: 350px;
+.pageText{
+  width: 45%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  
-}
-.pageR{
-  display: flex;
-  align-items: center;
- 
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.pageTextTitle{
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+.pageTextImg{
+  padding: 0 15px;
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pageTextImg img{
+  border-radius: 5px;
+  width: 100%;
+  height:500px;
+}
+.boxImageBarber{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+  margin: 25px 0;
+}
+.boxImgBarber{
+  width: 33%;
+  height: 100%;
+}
+.boxImgBarber img{
+  width: 100%;
+  height: 450px;
+  border: solid 2px #ccc;
+}
+.boxTextNow{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 25px 0;
+}
+.boxTextNow p {
+ 
+  width: 100%;
+  max-width: 500px;
+  text-align: justify;
 }
 /*-------------*/
 /*CSS PAGE GALERIA*/
-.pageGaleria{
+.pageGaleria {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -989,55 +1012,62 @@ a {
   color: #ccc;
   padding-top: 50px;
 }
-.pageGaleria h1,p {
-  padding: 10px 0 ;
+
+.pageGaleria h1,
+p {
+  padding: 10px 0;
 
 }
+
 .pageGaleria p {
- font-size: 19px;
+  font-size: 19px;
 
 }
-.container-galeria{
+
+.container-galeria {
   display: grid;
-  grid-template-columns: repeat(6,1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: 300px;
   padding: 5px;
   grid-gap: 5px;
 }
-.h-1{
+
+.h-1 {
   grid-row: span 1;
 }
 
-.h-2{
+.h-2 {
   grid-row: span 2;
 }
 
-.w-1{
+.w-1 {
   grid-column: span 1;
 }
 
-.w-2{
+.w-2 {
   grid-column: span 2;
 }
 
-.item-galeria{
+.item-galeria {
   position: relative;
   border: 2px solid #7C5C0A;
-  cursor:pointer;
+  cursor: pointer;
 }
 
-.item-galeria .img-galeria{
+.item-galeria .img-galeria {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
+
 }
-.pageContatoGalery{
+
+.pageContatoGalery {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
 }
-.boxContatoGaleria{
+
+.boxContatoGaleria {
   width: 100%;
   height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/bannerForm.jpg');
@@ -1050,7 +1080,7 @@ a {
 
 /*---------------*/
 /*CSS PAGE CONTATO*/
-.pageContato{
+.pageContato {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1059,6 +1089,7 @@ a {
   background-color: #363636;
   color: #ccc;
 }
+
 @media screen and (min-width:890px) {
   .menuMobile {
     display: none;
@@ -1089,18 +1120,34 @@ a {
   .boxContatoFormulario {
     padding: 50px 0;
   }
-  .boxUtilsFlex{
+
+  .boxUtilsFlex {
     flex-direction: column;
   }
-  .pageServicePriceDecript{
+
+  .pageServicePriceDecript {
     width: 100%;
     height: 100%;
     padding: 0 20px;
-   gap: 25px;
+    gap: 25px;
   }
-  .pageServiceFlex{
-     
-     padding: 0 25px;
+
+  .pageServiceFlex {
+
+    padding: 0 25px;
+  }
+  .pageFlex{
+    flex-direction: column;
+  }
+  .pageText{
+    width: 100%;
+    text-align: justify;
+  }
+  .pageTextImg{
+    width: 100%;
+  }
+  .boxImageBarber{
+    display: none;
   }
 }
 
@@ -1192,51 +1239,78 @@ a {
     justify-content: center;
     flex-direction: column;
     width: 206px;
-    height:206px;
-   
+    height: 206px;
+
   }
-  .boxService:hover{
+
+  .boxService:hover {
     margin-top: 30px;
   }
-  
+
 
   .boxServiceImg {
     align-items: center;
     justify-content: center;
   }
-  
  
 
 
+
 }
-@media(max-width:768px){
-  .container-galeria{
-      grid-template-columns: repeat(1,1fr);
-      grid-auto-rows: 50vh;
+
+@media(max-width:768px) {
+  .container-galeria {
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 50vh;
   }
 
-  .h-2{
-      grid-row: span 1;
+  .h-2 {
+    grid-row: span 1;
   }
-  
-  .w-2{
-      grid-column: span 1;
+
+  .w-2 {
+    grid-column: span 1;
   }
 }
+
 @media screen and (max-width:650px) {
   .boxGaleriaImg {
     width: 100%;
     height: auto;
 
   }
-  .pageServiceFlex{
+
+  .pageServiceFlex {
     width: 100%;
   }
 
 }
-@media screen and (max-width:400px) {
-  .pageServicePriceDecript span, p{
+
+@media screen and (max-width:440px) {
+   .boxContatoFlex{
+    padding: 0;
+   }
+   .boxContatoText{
+    padding: 5px;
+   }
+  .pageServicePriceDecript span,
+  p {
     font-size: 15px;
   }
-  
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  h3 {
+    font-size: 12px;
+  }
+
+  span {
+    font-size: 16px !important;
+  }
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { GiMustache } from "react-icons/gi";
@@ -15,11 +16,14 @@ const Nav = ()=>{
       setShowMenu(false)
     }
     return(
+      
         <header className="header">
              <div className="logo">
-              <Link href={"/"}>
+              <a href="/" aria-label="logo">
+
+            
                <GiMustache size={35} color={"#ccc"}/>
-               </Link>
+               </a>
             </div>
          <nav className="menuDesk">
          <ul>
@@ -27,9 +31,9 @@ const Nav = ()=>{
             navigation.map((menu:any,indice:number)=>(
               
                 <li key={indice}>
-                <Link href={menu.path} >
-                    <h3 className={router.pathname === menu.path ? "colorPath":""}>{menu.label}</h3>
-                </Link>
+                <Link href={menu.path}  className={router.pathname === menu.path ? "colorPath":""}>
+                    {menu.label}
+                    </Link>
               </li>
              
             ))
@@ -47,8 +51,8 @@ const Nav = ()=>{
               {
                 navigation.map((menu:any, indice:number)=>(
                   <li key={indice} onClick={handleClosedMenu}>
-                  <Link href={menu.path} >
-                      <h3 className={router.pathname === menu.path ? "colorPath":""}>{menu.label}</h3>
+                  <Link href={menu.path}  className={router.pathname === menu.path ? "colorPath":""}>
+                      {menu.label}
                   </Link>
                 </li>
                 ))
@@ -58,6 +62,7 @@ const Nav = ()=>{
        
          </nav>
          </header>
+         
     )
 }
 export default Nav;

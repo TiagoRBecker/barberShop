@@ -10,18 +10,25 @@ import {
     AiOutlineWhatsApp,
    
   } from "react-icons/ai";
+import Head from "next/head";
+
 const Servicos = () => {
+  const phone = 51997338612
     useEffect(() => {
         AOS.init();
     });
     return (
+      <>
+      <Head>
+        <title>Servicos</title>
+      </Head>
         <Layout>
             <section className="pageService">
                 <h1>SERVIÇOS</h1>
                 <h2>Tabela de Preços</h2>
                 <div className="pageServiceFlex">
                     <div className="pageServicesPrice">
-                        <h1>Tesoura Tradicional</h1>
+                        <h2>Tesoura Tradicional</h2>
                         <div className="pageServicePriceDecript"
                            >
                             <span>Corte Tradicional</span>
@@ -37,7 +44,7 @@ const Servicos = () => {
                             <span>Corte Infantil</span>
                             <p>R$59,90</p>
                         </div>
-                        <h1 >NAVALHA</h1>
+                        <h2 >NAVALHA</h2>
                         <div className="pageServicePriceDecript" 
                             >
                             <span>Navalha Tradicional</span>
@@ -48,7 +55,7 @@ const Servicos = () => {
                             <span>Navalha Degradê</span>
                             <p>R$59,90</p>
                         </div>
-                        <h1 >BARBA</h1>
+                        <h2 >BARBA</h2>
                         <div className="pageServicePriceDecript"
                            >
                             <span>Barba Grande</span>
@@ -64,7 +71,7 @@ const Servicos = () => {
                             <span>Barba Pequena</span>
                             <p>R$59,90</p>
                         </div>
-                        <h1>INFANTIL</h1>
+                        <h2>INFANTIL</h2>
                         <div className="pageServicePriceDecript"
                            >
                             <span>Corte Tradicional</span>
@@ -80,7 +87,7 @@ const Servicos = () => {
                             <span>Corte Máquina</span>
                             <p>R$59,90</p>
                         </div>
-                        <h1 >EXTRAS</h1>
+                        <h2 >EXTRAS</h2>
                         <div className="pageServicePriceDecript"
                             >
                             <span>Coloração</span>
@@ -131,53 +138,62 @@ const Servicos = () => {
                 </div>
                 <div className="boxContatoGaleria">
         <div className="boxContatoFlex">
-          <div className="boxContatoText" 
-         
-          >
-            <div className="boxContatoMustache">
-              <SlMustache size={80} fill={"#fff"} />
-            </div>
-            <div className="boxContatoDescr">
-              <span>Horário:</span>
-              <p>Seg á Sábado das 9h as 19h</p>
-            </div>
-            <div className="boxContatoDescr">
-              <span>Rua:</span>
-              <p>xxxxx-xxxxxx-xxxxx 1562</p>
-            </div>
-            <div className="boxContatoDescr">
-              <span>Bairro:</span>
-              <p>Floresta, Poa-Rs</p>
-            </div>
+            <div className="boxContatoText">
+              <div className="boxContatoMustache">
+                <SlMustache size={80} fill={"#fff"} />
+              
+              </div>
+                <div className="boxContatoAdress">
+                  <div className="boxAdressTitle">
+                    <h2>LOCALIZAÇÃO</h2>
+                  </div>
+                  <div className="boxAdress">
+                  <span></span>
+                  <p>Rua: Jesrusálem  Nº 1652 / Bairro: Floresta Poa/Rs</p>
+                  
+                  </div>
+                  <div className="boxIframeAdress">
+                  <iframe
+                  title="bairro floresta"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13818.471798810153!2d-51.21701958346447!3d-30.01912472943655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951979bb9de83c59%3A0x8ea873ac15723dd0!2sFloresta%2C%20Porto%20Alegre%20-%20RS!5e0!3m2!1spt-BR!2sbr!4v1677592007953!5m2!1spt-BR!2sbr"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                  </div>
+                </div>
+                <div className="boxContatoNumbers">
+                  <div className="boxContatoNumbersTitle">
+                    <h2>CONTATO</h2>
+                  </div>
+                  <div className="boxContatoNumber">
+                   
+                    <Link href={`tel:${phone}`}>
+                    <span><AiOutlinePhone size={25} color={"#fff"}/></span>
+                    <p>(51) 997-338-612</p>
+                    </Link>
+                  </div>
+                  <div className="boxContatoNumber">
+                   
+                    <Link target={"_blank"} href={"https://api.whatsapp.com/send?phone=5551997338612"}>
+                    <span><AiOutlineWhatsApp size={25} color={"#fff"}/></span>
+                    <p>(51) 997-338-612</p>
+                    </Link>
+                  </div>
+                </div>
 
-            <div className="boxContatoDescr">
-              <Link href={"#"}>
-                <span>
-                  <AiOutlinePhone size={25} color={"#ccc"} />
-                </span>
-                <p>(51) xxx-xxx-xxx </p>
-              </Link>
+              
+                
+              
             </div>
-
-            <div className="boxContatoDescr">
-              <Link href={"#"}>
-                <span>
-                  <AiOutlineWhatsApp size={25} color={"#ccc"} />
-                </span>
-                <p>(51) xxx-xxx-xxx</p>
-              </Link>
+            <div className="boxContatoForm">
+              <h2>AGENDE SEU HORÁRIO</h2>
+              <Contato/>
             </div>
-          </div>
-          <div className="boxContatoForm"
-         
-          >
-            <h1>AGENDE SEU HORÁRIO</h1>
-            <Contato/>
-          </div>
         </div>
         </div>
             </section>
         </Layout>
+      </>
     )
 }
 export default Servicos
