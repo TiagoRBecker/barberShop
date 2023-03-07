@@ -89,8 +89,8 @@ export default function Home() {
               <Image
                 src={"/sobre.webp"}
                 priority
-                width={500}
-                height={500}
+                width={640}
+                height={640}
                 alt="Sobre-Barbearia"
                 
                 className="sobreBanner"
