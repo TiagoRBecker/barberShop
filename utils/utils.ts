@@ -63,5 +63,5 @@ export const iconsSocials = [
     {alt:"twitter",url:"/twitter.png",path:"https://twitter.com",custom:"tw"},
     {alt:"insta",url:"/insta.png",path:"https://www.instagram.com",custom:"insta"},
     {alt:"tiktok",url:"/tk.png",path:"https://www.tiktok.com",custom:"tk"},
-    {alt:"yt", url:"/yt.png",path:"https://twitter.com",custom:"yt"}
+    {alt:"yt", url:"/yt.png",path:"https://www.youtube.com",custom:"yt"}
 ]
