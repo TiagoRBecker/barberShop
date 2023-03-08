@@ -31,7 +31,7 @@ a {
   text-decoration: none;
 }
 span {
-  font-size: 19px !important;
+  font-size: 17px !important;
 }
 .error {
   color: red;
@@ -39,6 +39,10 @@ span {
   align-items: center;
   justify-content: flex-start;
   padding: 4px 0;
+ 
+}
+.error span{
+  font-size: 13px !important;
 }
 
 /*CSS HEADER*/
@@ -80,15 +84,16 @@ span {
 .menuDesk ul li a {
   color: #ccc;
   transition: all ease-in-out 0.9s;
+  text-transform: uppercase;
 }
 
 .menuDesk ul li a:hover {
   transition: all ease-in-out 1s;
-  color: rgba(124, 92, 10, 1);
+  color: #ccac00 ;
 }
 
 .colorPath {
-  color: #7c5c0a !important;
+  color: #ccac00 !important;
 }
 
 .mobile {
@@ -96,9 +101,34 @@ span {
   display: none;
 }
 
+
 .menuMobileClosed {
-  display: none;
+  border-top: 2px solid #ccc;
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(28, 28, 28, 1);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 50px;
+  transform: translateY(-1500px);
+  transition: all ease-in-out 0.8s;
 }
+
+.menuMobileClosed ul li {
+  padding: 17px 0;
+  list-style: none;
+}
+
+.menuMobileClosed ul li a {
+  color: #ccc;
+  transition: all ease-in-out 0.9s;
+}
+
+
 
 .menuMobile {
   border-top: 2px solid #ccc;
@@ -112,6 +142,8 @@ span {
   align-items: flex-start;
   justify-content: center;
   padding-top: 50px;
+  transform: translateY(0px);
+  transition: all ease-in-out 1s;
 }
 
 .menuMobile ul li {
@@ -179,8 +211,8 @@ span {
   width: 200px;
   height: 40px;
   border-radius: 5px;
-  background-color: #7c5c0a;
-  color: #ccc;
+  background-color: #ccac00;
+  color: #000;
   text-transform: uppercase;
   border: none;
   font-weight: bold;
@@ -375,7 +407,7 @@ span {
   padding: 100px 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("/bannerForm.webp");
-  background-position: top;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -873,7 +905,7 @@ h2 {
 }
 .sobreBanner img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 .pageFlex {
@@ -1022,7 +1054,7 @@ p {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: #363636;
   color: #ccc;
 }
@@ -1183,7 +1215,7 @@ p {
   }
   .boxGaleriaImg {
     width: 100%;
-    height: 500px;
+    height: auto;
   }
 }
 

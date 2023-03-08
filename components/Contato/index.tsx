@@ -49,24 +49,20 @@ const Contato = () => {
 
   const handleDadosForm = (data: any) => {
     
-    if(service === "" ){
+    if(service === "" || barber === "" || hour === ""  ){
       setErrorService(true)
+      setErrorBarber(true)
+      setErrorHour(true)
+      return
      
     }
     else{
         setErrorService(false)
-    }
-    if( barber === ""){
-        setErrorBarber(true)
-    }else{
         setErrorBarber(false)
-    }
-    if(hour === ""){
-        setErrorHour(true)
-    }
-    else{
         setErrorHour(false)
-      }
+        
+    }
+  
  
     
    

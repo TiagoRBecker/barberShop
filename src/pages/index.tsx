@@ -88,9 +88,8 @@ export default function Home() {
             <div className="boxSobreImg">
               <Image
                 src={"/sobre.webp"}
-                priority
-                width={640}
-                height={640}
+                
+                fill
                 alt="Sobre-Barbearia"
                 
                 className="sobreBanner"
