@@ -1,66 +1,41 @@
-import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import Layout from "components/Layout";
-import { useEffect } from "react";
-import { Gallery, Item } from "react-photoswipe-gallery";
-import "photoswipe/dist/photoswipe.css";
 import { AiOutlinePhone, AiOutlineWhatsApp } from "react-icons/ai";
 import { SlMustache } from "react-icons/sl";
 import Contato from "components/Contato";
-import { galleryGrid } from "../../utils/utils";
-const Galeria = () => {
+const Navalha = () => {
   const phone = 51997338612;
-  useEffect(() => {
-    Gallery;
-  });
- 
-
   return (
-    <>
-      <Head>
-        <title>Galeria</title>
-      </Head>
-      <Layout>
-        <section className="pageGaleria">
-          <h1>GALERIA</h1>
-          <p>Confira alguns de nossos trabalhos </p>
-          <Gallery>
-            <div className="container-galeria">
-              {
-                galleryGrid.map((img:any, indice:number)=>(
-                  <div className={img.gridLayout}>
-                <Item
-                  original={img.url}
-                  thumbnail={img.url}
-                  width="800"
-                  height="800"
-                >
-                  {({ ref, open }) => (
-                    <Image
-                      ref={ref as React.MutableRefObject<HTMLImageElement>}
-                      onClick={open}
-                      src={img.url}
-                      width={800}
-                      height={800}
-                      className={img.imgClass}
-                      alt={img.alt}
-                    />
-                  )}
-                </Item>
-              </div>
-                ))
-              }
-              
-            </div>
-          </Gallery>
-          <div className="boxServiceMustache">
-            <span className="boxServiceBorder"></span>
-            <SlMustache size={80} color={"#fff"} />
-            <span className="boxServiceBorder"></span>
-          </div>
-
-          <div className="boxContatoGaleria">
+    <Layout>
+    <section className="pageService">
+    <h1>Tabela de preços cortes com Navalha</h1>
+    <div className="pageServiceFlex">
+    <div className="pageServicesPrice">
+      <h2>TRADICIONAL</h2>
+      <div className="pageServicePriceDecript">
+        <span>Navalha Tradicional</span>
+        <p>R$59,90</p>
+      </div>
+      <div className="pageServicePriceDecript">
+        <span>Navalha Degradê</span>
+        <p>R$59,90</p>
+      </div>
+      <h2>INFANTIL</h2>
+      <div className="pageServicePriceDecript">
+        <span>Corte Tradicional</span>
+        <p>R$59,90</p>
+      </div>
+      <div className="pageServicePriceDecript">
+        <span>Corte Degradê</span>
+        <p>R$59,90</p>
+      </div>
+      <div className="pageServicePriceDecript">
+        <span>Corte Máquina</span>
+        <p>R$59,90</p>
+      </div>
+    </div>
+    </div>
+    <div className="boxContatoGaleria">
             <div className="boxContatoFlex">
               <div className="boxContatoText">
                 <div className="boxContatoMustache">
@@ -112,10 +87,9 @@ const Galeria = () => {
                 <Contato />
               </div>
             </div>
-          </div>
-        </section>
-      </Layout>
-    </>
+       </div>
+    </section>
+    </Layout>
   );
 };
-export default Galeria;
+export default Navalha;

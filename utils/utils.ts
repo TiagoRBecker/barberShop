@@ -10,9 +10,9 @@ export const services =[
     {id:2, path:"Corte Máquina"},
     {id:3, path:"Corte Degradê"},
     {id:4, path:"Máquina Tradicional"},
-    {id:4, path:"Barba Corte"},
-    {id:4, path:"Barba Hidratação"},
-    {id:4, path:"Barba Massagem "},
+    {id:5, path:"Barba Corte"},
+    {id:6, path:"Barba Hidratação"},
+    {id:7, path:"Barba Massagem "},
     
 ]
 export const hours = [
@@ -35,10 +35,10 @@ export const colaborador =[
     {id:3 , name:"Matheus Duarte"}
 ]
 export const servicesLayout =[
-   {name:"Tesoura Tradicional" ,img:"/tesoura.png"},
-   {name:"Navalha" ,img:"/navalha.png"},
-   {name:"Máquina" ,img:"/maquina.png"},
-   {name:"Extras" ,img:"/tinta.png"}
+   {name:"Tesoura Tradicional" ,img:"/tesoura.png", path:"/tesoura"},
+   {name:"Navalha" ,img:"/navalha.png",path:"/navalha"},
+   {name:"Máquina" ,img:"/maquina.png",path:"/maquina"},
+   {name:"Extras" ,img:"/tinta.png",path:"/extras"}
 ]
 export  const gallery =[
     {url:"/corte1.jpg", alt:"Cortes"},

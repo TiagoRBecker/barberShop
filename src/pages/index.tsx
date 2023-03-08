@@ -89,10 +89,11 @@ export default function Home() {
               <Image
                 src={"/sobre.webp"}
                 
-                fill
+               width={500}
+               height={500}
                 alt="Sobre-Barbearia"
                 
-                className="sobreBanner"
+                className="sobreBarberImg"
               />
             </div>
           </div>
@@ -101,7 +102,7 @@ export default function Home() {
           <h1>SERVIÇOS</h1>
           <div className=" boxServicosFlex" data-aos="fade-up" data-aos-delay="200">
             {servicesLayout.map((service: any, indice: number) => (
-              <Link href={"/servicos"} key={indice}>
+              <Link href={service.path} key={indice}>
                 <div className="boxService">
                   <div className="boxServiceImg">
                     <Image
