@@ -11,7 +11,7 @@ body {
   height: 100%;
   overflow-x: hidden;
   background-color: black;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif!important;
 }
 
 h1 {
@@ -30,6 +30,7 @@ p {
 
 h3 {
   font-size: 15px !important;
+ 
 }
 
 a {
@@ -94,6 +95,11 @@ span {
   color: #ccc;
   transition: all ease-in-out 0.9s;
 
+}
+.menuDesk ul li a h3{
+  margin: 0!important;
+  font-size:  15px!important;
+  font-weight: bold;
 }
 
 .menuDesk ul li a:hover {
