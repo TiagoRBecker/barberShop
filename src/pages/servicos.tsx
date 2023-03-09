@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Layout from "components/Layout";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Contato from "components/Contato";
 import { SlMustache } from "react-icons/sl";
 import { AiOutlinePhone, AiOutlineWhatsApp } from "react-icons/ai";
