@@ -940,7 +940,7 @@ h2 {
 
 .accordion-button {
   outline: none !important;
-  border: 2px solid #7c5c0a !important;
+  border: 1px #fff solid !important;
   background-color: #363636 !important;
   display: flex;
   width: 250px !important;
@@ -948,6 +948,7 @@ h2 {
   border-radius: 5px !important;
   font-size: 20px;
   transition: all ease-in-out 1s !important;
+ 
 }
 
 .accordion-button:hover {
