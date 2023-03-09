@@ -29,7 +29,7 @@ const Galeria = () => {
             <div className="container-galeria">
               {
                 galleryGrid.map((img:any, indice:number)=>(
-                  <div className={img.gridLayout}>
+                  <div className={img.gridLayout} key={indice}>
                 <Item
                   original={img.url}
                   thumbnail={img.url}

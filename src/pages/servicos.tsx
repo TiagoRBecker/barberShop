@@ -1,12 +1,14 @@
+import Head from "next/head";
 import Link from "next/link";
 import { useEffect } from "react";
 import Layout from "components/Layout";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Contato from "components/Contato";
 import { SlMustache } from "react-icons/sl";
 import { AiOutlinePhone, AiOutlineWhatsApp } from "react-icons/ai";
-import Head from "next/head";
+import { Accordion } from "react-bootstrap";
 
 const Servicos = () => {
   const phone = 51997338612;
@@ -16,100 +18,319 @@ const Servicos = () => {
   return (
     <>
       <Head>
-        <title>Servicos</title>
+        <title>Serviços</title>
       </Head>
       <Layout>
         <section className="pageService">
           <h1>SERVIÇOS</h1>
           <h2>Tabela de Preços</h2>
-          <div className="pageServiceFlex">
-            <div className="pageServicesPrice">
-              <h2>TESOURA TRADICIONAL</h2>
-              <div className="pageServicePriceDecript">
-                <span>Corte Tradicional</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Corte Degradê</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Corte Infantil</span>
-                <p>R$59,90</p>
-              </div>
-              <h2>NAVALHA</h2>
-              <div className="pageServicePriceDecript">
-                <span>Navalha Tradicional</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Navalha Degradê</span>
-                <p>R$59,90</p>
-              </div>
-              <h2>BARBA</h2>
-              <div className="pageServicePriceDecript">
-                <span>Barba Grande</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Barba Média</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Barba Pequena</span>
-                <p>R$59,90</p>
-              </div>
-              <h2>INFANTIL</h2>
-              <div className="pageServicePriceDecript">
-                <span>Corte Tradicional</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Corte Degradê</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Corte Máquina</span>
-                <p>R$59,90</p>
-              </div>
-              <h2>EXTRAS</h2>
-              <div className="pageServicePriceDecript">
-                <span>Coloração</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Platinado</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Mechas</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Hidratação</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Hidratação Barba grande</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Hidratação Barba Média</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Hidratação Barba Pequena</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Platinado Infantil</span>
-                <p>R$59,90</p>
-              </div>
-              <div className="pageServicePriceDecript">
-                <span>Coloraçao Infantil</span>
-                <p> R$ 59,90</p>
-              </div>
-            </div>
+          <div className="boxAccordion">
+            <Accordion defaultActiveKey="0">
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>TESOURA TRADICIONAL</Accordion.Header>
+                <Accordion.Body>
+                  <div className="accordionBodyPrice">
+                    <div className="descPrice">
+                      <span>Corte Tradicional</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                    </div>
+                    <div className="descPrice">
+                      <span>Corte Degradê</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                    <div className="descPrice">
+                      <span>Corte Infantil</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                  </div>
+                 
+                </Accordion.Body>
+              </Accordion.Item>
+
+              <Accordion.Item eventKey="1">
+                <Accordion.Header>NAVALHA</Accordion.Header>
+                <Accordion.Body>
+                <div className="accordionBodyPrice">
+                    <div className="descPrice">
+                      <span>Navalha Tradicional</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                    </div>
+                    <div className="descPrice">
+                      <span>Navalha Degradê</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                    <div className="descPrice">
+                      <span>Navalha Degradê Infantil</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                  </div>
+                 
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="2">
+                <Accordion.Header>BARBA</Accordion.Header>
+                <Accordion.Body>
+                <div className="accordionBodyPrice">
+                    <div className="descPrice">
+                      <span>Corte Barba Pequena </span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                    </div>
+                    <div className="descPrice">
+                      <span>Corte Barba Média</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                    <div className="descPrice">
+                      <span>Corte Barba Grande</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                  </div>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="3">
+                <Accordion.Header>INFANTIL</Accordion.Header>
+                <Accordion.Body>
+                <div className="accordionBodyPrice">
+                    <div className="descPrice">
+                      <span>Corte Tradicional</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                    </div>
+                    <div className="descPrice">
+                      <span>Corte Degradê</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                    <div className="descPrice">
+                      <span>Corte Máquina</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                  </div>
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="4">
+                <Accordion.Header>MÁQUINA</Accordion.Header>
+                <Accordion.Body>
+                <div className="accordionBodyPrice">
+                    <div className="descPrice">
+                      <span>Máquina Tradicional</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                    </div>
+                    <div className="descPrice">
+                      <span>Máquina Degradê</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                    <div className="descPrice">
+                      <span>Máquina Corte Infantil</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                  </div>
+                </Accordion.Body>
+              </Accordion.Item>
+
+              <Accordion.Item eventKey="5">
+                <Accordion.Header>EXTRAS</Accordion.Header>
+                <Accordion.Body>
+                 <div className="accordionBodyPrice">
+                    <div className="descPrice">
+                      <span>Coloração</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                    </div>
+                    <div className="descPrice">
+                      <span>Platinado</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                    <div className="descPrice">
+                      <span>Mechas</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                    <div className="descPrice">
+                      <span>Hidratação</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                    <div className="descPrice">
+                      <span>Hidratação Barba grande</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                    <div className="descPrice">
+                      <span>Hidratação Barba Média</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                    <div className="descPrice">
+                      <span>Hidratação Barba Pequena</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                    <div className="descPrice">
+                      <span>Platinado Infantil</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                    <div className="descPrice">
+                      <span>Coloraçao Infantil</span>
+                      <p>R$59,99</p>
+                    </div>
+                    <div className="descService">
+                      <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ullam sapiente adipisci praesentium quaerat eos possimus
+                      </p>
+                      
+                    </div>
+                  </div>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
           </div>
           <div className="boxContatoGaleria">
             <div className="boxContatoFlex">

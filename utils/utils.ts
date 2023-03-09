@@ -65,3 +65,14 @@ export const iconsSocials = [
     {alt:"tiktok",url:"/tk.png",path:"https://www.tiktok.com",custom:"tk"},
     {alt:"yt", url:"/yt.png",path:"https://www.youtube.com",custom:"yt"}
 ]
+export const gallerybarber = [
+    {url:"/sobreBarber.jpg", alt:"Cortes", gridLayout:"item-galeria w-2 h-2" ,imgClass:"img-galeria"},
+    {url:"/sobreBarber2.jpg", alt:"Cortes" ,gridLayout:"item-galeria  w-2 h-1",imgClass:"img-galeria"},
+    {url:"/sobreBarber3.jpg", alt:"Cortes", gridLayout:"item-galeria  w-1 h-2",imgClass:"img-galeria"},
+    {url:"/sobreBarber4.jpg", alt:"Cortes",gridLayout:"item-galeria  w-1 h-1",imgClass:"img-galeria"},
+    {url:"/sobreBarber5.jpg", alt:"Cortes",gridLayout:"item-galeria  w-1 h-1",imgClass:"img-galeria"},
+    {url:"/sobreBarber3.jpg", alt:"Cortes",gridLayout:"item-galeria w-1 h-1",imgClass:"img-galeria"},
+    {url:"/sobreBarber.jpg", alt:"Cortes",gridLayout:"item-galeria w-1 h-1",imgClass:"img-galeria"}
+    
+   
+]
