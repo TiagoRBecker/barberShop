@@ -35,10 +35,10 @@ export const colaborador =[
     {id:3 , name:"Matheus Duarte"}
 ]
 export const servicesLayout =[
-   {name:"Tesoura Tradicional" ,img:"/tesoura.png", path:"/tesoura"},
-   {name:"Navalha" ,img:"/navalha.png",path:"/navalha"},
-   {name:"Máquina" ,img:"/maquina.png",path:"/maquina"},
-   {name:"Extras" ,img:"/tinta.png",path:"/extras"}
+   {name:"Tesoura Tradicional" ,img:"/tesoura.png", label:"/tesoura"},
+   {name:"Navalha" ,img:"/navalha.png",label:"/navalha"},
+   {name:"Máquina" ,img:"/maquina.png",label:"/maquina"},
+   {name:"Extras" ,img:"/tinta.png",label:"/extras"}
 ]
 export  const gallery =[
     {url:"/corte1.jpg", alt:"Cortes"},

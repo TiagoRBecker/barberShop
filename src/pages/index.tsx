@@ -7,6 +7,7 @@ import { SlMustache } from "react-icons/sl";
 import { AiOutlinePhone, AiOutlineWhatsApp } from "react-icons/ai";
 import { ImQuotesLeft, ImQuotesRight } from "react-icons/im";
 import { gallery, servicesLayout ,iconsSocials} from "../../utils/utils";
+import {ServiceLayout,Gallery,SocialIcons} from "../../utils/types"
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Contato from "../../components/Contato/index";
@@ -101,8 +102,8 @@ export default function Home() {
         <section className="boxServicos">
           <h1>SERVIÇOS</h1>
           <div className=" boxServicosFlex" data-aos="fade-up" data-aos-delay="200">
-            {servicesLayout.map((service: any, indice: number) => (
-              <Link href={service.path} key={indice}>
+            {servicesLayout.map((service:ServiceLayout, indice: number) => (
+              <Link href={service.label} key={indice}>
                 <div className="boxService">
                   <div className="boxServiceImg">
                     <Image
@@ -180,7 +181,7 @@ export default function Home() {
         <section className="boxGaleria">
           <h1>GALERIA </h1>
           <div className="boxGaleriaFlex" data-aos="fade-up" data-aos-delay="200">
-            {gallery.map((itens: any, indice?: number) => (
+            {gallery.map((itens: Gallery, indice?: number) => (
               <Link href={"/galeria"} key={indice}>
                 <div className="boxGaleriaImg">
                   <Image
@@ -224,7 +225,7 @@ export default function Home() {
             <h1>SIGA-NOS</h1>
             <div className="boxSocialsFLex">
               {
-               iconsSocials.map((icons:any, indice:number)=>(
+               iconsSocials.map((icons:SocialIcons, indice:number)=>(
                 <div className="boxSocialsIcons" key={indice}>
                 <Link href={icons.path} target="_blank" >
                  <Image src={icons.url} width={48} height={48} alt={icons.alt} className={icons.custom}/>

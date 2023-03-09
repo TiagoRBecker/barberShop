@@ -9,6 +9,7 @@ import { AiOutlinePhone, AiOutlineWhatsApp } from "react-icons/ai";
 import { SlMustache } from "react-icons/sl";
 import Contato from "components/Contato";
 import { galleryGrid } from "../../utils/utils";
+import {GalleryGrid} from "../../utils/types"
 const Galeria = () => {
   const phone = 51997338612;
   useEffect(() => {
@@ -28,7 +29,7 @@ const Galeria = () => {
           <Gallery>
             <div className="container-galeria">
               {
-                galleryGrid.map((img:any, indice:number)=>(
+                galleryGrid.map((img:GalleryGrid, indice:number)=>(
                   <div className={img.gridLayout} key={indice}>
                 <Item
                   original={img.url}

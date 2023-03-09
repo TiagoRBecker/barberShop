@@ -5,6 +5,7 @@ import { useState } from "react";
 import { GiMustache } from "react-icons/gi";
 import { AiOutlineMenu } from "react-icons/ai";
 import { navigation } from "../../utils/utils";
+import { Navigation } from "../../utils/types";
 const Nav = () => {
   const router = useRouter();
   const [showMenu, setShowMenu] = useState(false);
@@ -23,13 +24,13 @@ const Nav = () => {
       </div>
       <nav className="menuDesk">
         <ul>
-          {navigation.map((menu: any, indice: number) => (
+          {navigation.map((menu:Navigation, indice: number) => (
             <li key={indice}>
               <Link href={menu.path}>
                 <h3
                   className={
-                    router.pathname === menu.path||
-                    router.pathname === menu.path.includes("/extras")                   
+                    router.pathname === menu.path
+                                     
                     
                       ? "colorPath"
                       : ""
@@ -48,7 +49,7 @@ const Nav = () => {
       </nav>
       <nav className={showMenu ? "menuMobile" : "menuMobileClosed"}>
         <ul>
-          {navigation.map((menu: any, indice: number) => (
+          {navigation.map((menu:Navigation, indice: number) => (
             <li key={indice} onClick={handleClosedMenu}>
               <Link
                 href={menu.path}

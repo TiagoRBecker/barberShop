@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import{navigation} from "../../utils/utils"
 import { SlMustache } from "react-icons/sl";
+import { Navigation } from "../../utils/types";
 const Footer = () => {
   const router = useRouter()
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
             <nav className="boxNavUtilsMenu">
             <ul>
               {
-                navigation.map((menu:any, indice:number)=>(
+                navigation.map((menu:Navigation, indice:number)=>(
                   <li key={indice} >
                   <Link href={menu.path}  className={router.pathname === menu.path ? "colorPath":""}>
                       {menu.label}

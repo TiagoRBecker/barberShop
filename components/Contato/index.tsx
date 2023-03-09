@@ -4,6 +4,7 @@ import { useState,useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { services, colaborador,hours } from "../../utils/utils";
+import {Hour,Services,Colaborador} from "../../utils/types"
 const Contato = () => {
    
   const validateForm = yup.object().shape({
@@ -176,7 +177,7 @@ const Contato = () => {
             
          <option value={""}>Escolha o Horário</option>
          {
-           hours.map((hour:any, indice:number)=>(
+           hours.map((hour:Hour, indice:number)=>(
                <option key={indice} value={hour.hour}>{hour.hour}</option>
            ))
          }
@@ -193,7 +194,7 @@ const Contato = () => {
             name={"service"}
           >
             <option value={""}>Selecione o Serviço</option>
-            {services.map((service: any, indice: number) => (
+            {services.map((service:Services, indice: number) => (
               <option key={indice} value={service.path}>
                 {service.path}
               </option>
@@ -214,7 +215,7 @@ const Contato = () => {
             <option value={""}>
               Selecione o colaborador
             </option>
-            {colaborador.map((barber: any, indice: number) => (
+            {colaborador.map((barber:Colaborador, indice: number) => (
               <option key={indice} value={barber.name}>
                 {barber.name}
               </option>
